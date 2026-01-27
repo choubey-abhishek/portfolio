@@ -23,18 +23,20 @@
             --text-color: #202124;
             --background: var(--white);
             --accent-background: #F8F9FA;
-            --card-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            --card-shadow: 0 6px 20px rgba(0,0,0,0.07);
             --glow: 0 0 15px rgba(66,133,244,0.3);
             --subtle-gradient: linear-gradient(135deg, rgba(66,133,244,0.03) 0%, rgba(244,180,0,0.03) 100%);
         }
+
         /* Dark Mode */
         body.dark-mode {
             --background: #0f0f0f;
             --text-color: #E8EAED;
             --accent-background: #1a1a1a;
-            --card-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.35);
             --subtle-gradient: linear-gradient(135deg, rgba(66,133,244,0.06) 0%, rgba(244,180,0,0.06) 100%);
         }
+
         /* Global Body */
         body {
             font-family: 'Inter', sans-serif;
@@ -50,6 +52,7 @@
             min-height: 100vh;
             position: relative;
         }
+
         /* Subtle floating dots – optimized */
         body::before {
             content: '';
@@ -64,105 +67,425 @@
             will-change: transform;
             backface-visibility: hidden;
         }
+
         @keyframes floatDots {
             0% { transform: translate(0, 0); }
             100% { transform: translate(30px, 30px); }
         }
+
         body.dark-mode::before { opacity: 0.04; }
         body.loaded::before { animation: none; }
+
         h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        /* Header */
+
+        /* ────────────────────────────────────────────────
+           Modern Glassmorphism Header + Navbar
+        ───────────────────────────────────────────────── */
         header {
             position: sticky;
             top: 0;
-            background-color: var(--background);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
             z-index: 1000;
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.68);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border-bottom: 1px solid rgba(66, 133, 244, 0.12);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
         }
+
+        body.dark-mode header {
+            background: rgba(15, 15, 15, 0.82);
+            backdrop-filter: blur(16px) saturate(160%);
+            border-bottom: 1px solid rgba(66, 133, 244, 0.20);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
+        }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
+            padding: 20px 0;
+            gap: 48px;
         }
-        nav .logo {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--primary-blue);
-            letter-spacing: -0.5px;
-            text-shadow: var(--glow);
-            transition: all 0.4s;
-        }
-        nav .logo:hover { text-shadow: 0 0 30px rgba(66,133,244,0.6); }
-        nav ul {
-            list-style: none;
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.9px;
             display: flex;
-            gap: 20px;
-            align-items: center;
+            align-items: baseline;
+            gap: 6px;
         }
-        nav ul li a {
-            text-decoration: none;
+
+        .logo-primary {
+            background: linear-gradient(90deg, var(--primary-blue), #6aa0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-secondary {
+            color: var(--text-color);
+            opacity: 0.92;
+            font-weight: 600;
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
+            filter: brightness(1.08);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            position: relative;
             color: var(--text-color);
             font-weight: 500;
-            font-size: 0.98rem;
-            position: relative;
-            transition: color 0.3s;
+            font-size: 1.02rem;
+            text-decoration: none;
+            padding: 6px 4px;
+            transition: color 0.3s ease;
         }
-        nav ul li a:hover,
-        nav ul li a.active { color: var(--primary-blue); }
-        nav ul li a::after {
+
+        .nav-links li a::after {
             content: '';
             position: absolute;
+            bottom: -4px;
+            left: 50%;
             width: 0;
-            height: 3px;
-            bottom: -8px;
-            left: 0;
-            background: linear-gradient(90deg, var(--primary-blue), var(--yellow));
+            height: 2.5px;
+            background: var(--primary-blue);
             border-radius: 2px;
-            transition: width 0.4s ease;
+            transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
         }
-        nav ul li a:hover::after,
-        nav ul li a.active::after { width: 100%; }
-        nav .github-btn,
-        nav .resume-btn {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 8px 20px;
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: var(--primary-blue);
+        }
+
+        .nav-links li a:hover::after,
+        .nav-links li a.active::after {
+            width: 65%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .action-btn {
+            padding: 10px 24px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.4s;
-            box-shadow: none;
+            font-size: 0.97rem;
+            transition: all 0.32s ease;
+            text-decoration: none;
         }
-        nav .github-btn:hover,
-        nav .resume-btn:hover {
+
+        .github-btn {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .github-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(66, 133, 244, 0.3);
+        }
+
+        .resume-btn {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 4px 14px rgba(66, 133, 244, 0.28);
+        }
+
+        .resume-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(66,133,244,0.25);
+            box-shadow: 0 12px 28px rgba(66, 133, 244, 0.45);
         }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(66, 133, 244, 0.12);
+            transform: rotate(25deg) scale(1.15);
+        }
+
         .hamburger {
             display: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
+            padding: 8px;
             color: var(--text-color);
         }
+
+        /* Mobile Menu */
         @media (max-width: 768px) {
-            nav ul {
+            nav {
+                padding: 18px 0;
+                gap: 24px;
+            }
+
+            .nav-links {
                 display: none;
-                flex-direction: column;
                 position: absolute;
                 top: 100%;
                 left: 0;
-                width: 100%;
-                background-color: var(--background);
-                padding: 24px 0;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                right: 0;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.94);
+                backdrop-filter: blur(12px);
+                padding: 28px 20px;
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+                border-radius: 0 0 16px 16px;
+                gap: 20px;
             }
-            nav ul.active { display: flex; }
+
+            body.dark-mode .nav-links {
+                background: rgba(18, 18, 18, 0.96);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.active { display: flex; }
+
+            .nav-links li a {
+                font-size: 1.15rem;
+                padding: 12px 0;
+            }
+
+            .nav-actions { gap: 14px; }
             .hamburger { display: block; }
+            .theme-toggle { font-size: 1.5rem; }
         }
-        /* Hero Section */
+
+        /* ────────────────────────────────────────────────
+           Modern Cards – Upgraded UI/UX + Animations
+        ───────────────────────────────────────────────── */
+        .highlight-card,
+        .skill-card,
+        .project-card,
+        .achievement-card,
+        .experience-card {
+            background: var(--accent-background);
+            border-radius: 20px;
+            padding: 28px 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(66,133,244,0.08);
+            will-change: transform, box-shadow;
+        }
+
+        body.dark-mode .highlight-card,
+        body.dark-mode .skill-card,
+        body.dark-mode .project-card,
+        body.dark-mode .achievement-card,
+        body.dark-mode .experience-card {
+            background: linear-gradient(145deg, #1a1a1a, #222);
+            border: 1px solid rgba(66,133,244,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        .highlight-card:hover,
+        .skill-card:hover,
+        .project-card:hover,
+        .achievement-card:hover,
+        .experience-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(66,133,244,0.18);
+            border-color: rgba(66,133,244,0.25);
+        }
+
+        /* Entrance animation – staggered */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delays */
+        .highlights .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .highlights .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .highlights .reveal:nth-child(3) { transition-delay: 0.3s; }
+
+        .skills-grid .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .skills-grid .reveal:nth-child(2) { transition-delay: 0.25s; }
+        .skills-grid .reveal:nth-child(3) { transition-delay: 0.4s; }
+        .skills-grid .reveal:nth-child(4) { transition-delay: 0.55s; }
+
+        /* Skill card */
+        .skill-card h3 {
+            font-size: 1.45rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .skill-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--yellow));
+            border-radius: 3px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-card li {
+            padding: 12px 0 12px 36px;
+            position: relative;
+            font-size: 1.02rem;
+            color: var(--text-color);
+            transition: all 0.35s ease;
+        }
+
+        .skill-card li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            line-height: 1;
+            transition: transform 0.4s ease;
+        }
+
+        .skill-card li:hover {
+            color: var(--primary-blue);
+            padding-left: 44px;
+        }
+
+        .skill-card li:hover::before {
+            transform: translateX(8px);
+        }
+
+        /* Project card */
+        .project-card {
+            border-radius: 20px;
+        }
+
+        .project-card .image-wrapper {
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            height: 220px;
+            position: relative;
+        }
+
+        .project-card img,
+        .project-card video {
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-card:hover img,
+        .project-card:hover video {
+            transform: scale(1.14);
+        }
+
+        .project-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px 24px;
+            color: white;
+        }
+
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .project-card .overlay p {
+            margin: 0 0 12px 0;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        /* Achievement card */
+        .achievement-card {
+            text-align: center;
+            padding: 40px 28px;
+        }
+
+        .achievement-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+        }
+
+        .achievement-card .counter {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin: 16px 0 12px;
+        }
+
+        .achievement-card p {
+            font-size: 1.1rem;
+            opacity: 0.92;
+        }
+
+        /* Responsive card adjustments */
+        @media (max-width: 768px) {
+            .highlight-card, .skill-card, .project-card, .achievement-card {
+                padding: 24px 20px;
+            }
+            .project-card .image-wrapper { height: 200px; }
+            .achievement-card { padding: 32px 20px; }
+            .achievement-card .counter { font-size: 3.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .skill-card li {
+                font-size: 0.98rem;
+                padding: 10px 0 10px 32px;
+            }
+        }
+
+        /* ────────────────────────────────────────────────
+           Rest of your original styles (unchanged)
+        ───────────────────────────────────────────────── */
         #hero {
             position: relative;
             min-height: 100vh;
@@ -172,12 +495,14 @@
             text-align: center;
             overflow: hidden;
         }
+
         #hero .wave {
             position: absolute;
             inset: 0;
             background: var(--primary-blue);
             perspective: 1000px;
         }
+
         #hero .wave span {
             position: absolute;
             width: 200vh;
@@ -189,25 +514,30 @@
             backface-visibility: hidden;
             transform: translate(-50%, -75%) translateZ(0);
         }
+
         #hero .wave span:nth-child(1) {
             border-radius: 45%;
             background: rgba(20, 20, 20, 0.9);
             animation: animate 12s linear infinite;
         }
+
         #hero .wave span:nth-child(2) {
             border-radius: 40%;
             background: rgba(20, 20, 20, 0.5);
             animation: animate 20s linear infinite reverse;
         }
+
         #hero .wave span:nth-child(3) {
             border-radius: 42%;
             background: rgba(20, 20, 20, 0.3);
             animation: animate 30s linear infinite;
         }
+
         @keyframes animate {
             0% { transform: translate(-50%, -75%) translateZ(0) rotate(0deg); }
             100% { transform: translate(-50%, -75%) translateZ(0) rotate(360deg); }
         }
+
         #hero .hero-content {
             position: relative;
             z-index: 2;
@@ -215,18 +545,21 @@
             max-width: 900px;
             padding: 0 20px;
         }
+
         #hero h1 {
             font-size: 3rem;
             margin-bottom: 12px;
             font-weight: 800;
             text-shadow: 0 0 20px rgba(0,0,0,0.4);
         }
+
         #hero p {
             font-size: 1.2rem;
             max-width: 720px;
             margin: 0 auto 30px;
             opacity: 0.95;
         }
+
         .cta-buttons {
             display: flex;
             justify-content: center;
@@ -234,6 +567,7 @@
             margin-bottom: 50px;
             flex-wrap: wrap;
         }
+
         .cta-btn {
             background-color: rgba(255,255,255,0.25);
             color: #fff;
@@ -244,18 +578,21 @@
             border: 2px solid rgba(255,255,255,0.3);
             transition: all 0.5s ease;
         }
+
         .cta-btn:hover {
             background-color: #fff;
             color: var(--primary-blue);
             transform: translateY(-6px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.25);
         }
+
         .stats {
             display: flex;
             justify-content: center;
             gap: 36px;
             flex-wrap: wrap;
         }
+
         .stat {
             background: rgba(255,255,255,0.2);
             padding: 20px 24px;
@@ -264,10 +601,12 @@
             transition: all 0.5s ease;
             border: 1px solid rgba(255,255,255,0.2);
         }
+
         .stat:hover {
             transform: translateY(-8px);
             box-shadow: var(--glow);
         }
+
         .stat span {
             display: block;
             font-size: 2.6rem;
@@ -276,22 +615,25 @@
             color: var(--yellow);
             text-shadow: 0 0 15px rgba(244,180,0,0.5);
         }
+
         .stat-desc {
             font-size: 1.05rem;
             font-weight: 600;
             color: #fff;
         }
-        /* General Sections */
+
         section {
             padding: 90px 0;
             position: relative;
         }
+
         section h2 {
             text-align: center;
             font-size: 2.6rem;
             margin-bottom: 50px;
             position: relative;
         }
+
         section h2::after {
             content: '';
             width: 80px;
@@ -303,97 +645,20 @@
             transform: translateX(-50%);
             border-radius: 3px;
         }
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Cards */
-        .highlight-card,
-        .skill-card,
-        .project-card,
-        .achievement-card,
-        .experience-card {
-            background-color: var(--accent-background);
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            will-change: transform;
-        }
-        .highlight-card:hover,
-        .skill-card:hover,
-        .project-card:hover,
-        .achievement-card:hover,
-        .experience-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 28px rgba(55,111,222,0.13);
-        }
-        @media (hover: none) {
-            *:hover {
-                transform: none !important;
-                box-shadow: none !important;
-            }
-        }
+
         .highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
-        .skill-card h3 {
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 12px;
-            font-size: 1.4rem;
-        }
-        .skill-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--yellow));
-            border-radius: 2px;
-        }
-        .skill-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .skill-card li {
-            padding: 10px 0;
-            padding-left: 28px;
-            font-size: 1rem;
-            position: relative;
-            transition: color 0.3s;
-        }
-        .skill-card li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 1.4rem;
-            line-height: 1;
-        }
-        .skill-card li:hover {
-            color: var(--primary-blue);
-            padding-left: 40px;
-        }
+
         .project-filters {
             display: flex;
             justify-content: center;
@@ -401,6 +666,7 @@
             margin-bottom: 50px;
             flex-wrap: wrap;
         }
+
         .filter-btn {
             padding: 12px 28px;
             border: none;
@@ -413,77 +679,41 @@
             transition: all 0.4s ease;
             box-shadow: var(--card-shadow);
         }
+
         .filter-btn:hover {
             transform: translateY(-6px);
             box-shadow: var(--glow);
         }
+
         .filter-btn.active {
             background: var(--primary-blue);
             color: var(--white);
             box-shadow: var(--glow);
         }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        .project-card {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            overflow: hidden;
-        }
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .project-card .image-wrapper {
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px 16px 0 0;
-            height: 200px;
-        }
-        .project-card img, .project-card video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        .project-card:hover img,
-        .project-card:hover video {
-            transform: scale(1.12);
-        }
-        .project-card .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-            color: #fff;
-        }
-        .project-card:hover .overlay { opacity: 1; }
-        .project-card .overlay p {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 500;
-        }
+
         .project-card h3 {
             font-size: 1.5rem;
             margin: 16px 0 10px;
         }
+
         .project-card p {
             font-size: 1rem;
             margin-bottom: 16px;
         }
+
         .tech-stack {
             margin: 16px 0;
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
+
         .tech-badge {
             background: linear-gradient(90deg, var(--primary-blue), var(--blue-dark));
             color: #fff;
@@ -492,13 +722,16 @@
             font-size: 0.85rem;
             transition: transform 0.3s ease;
         }
+
         .tech-badge:hover { transform: scale(1.1); }
+
         .project-links {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
             margin-top: 16px;
         }
+
         .project-btn {
             padding: 9px 22px;
             background: var(--primary-blue);
@@ -509,37 +742,19 @@
             font-size: 0.95rem;
             transition: all 0.4s;
         }
+
         .project-btn:hover {
             transform: translateY(-5px);
             box-shadow: var(--glow);
         }
+
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
-        .achievement-card {
-            text-align: center;
-            padding: 32px 20px;
-            position: relative;
-        }
-        .achievement-card .icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        .achievement-card .counter {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary-blue);
-            margin: 20px 0;
-            display: block;
-        }
-        .achievement-card p {
-            font-size: 1.05rem;
-            margin: 0;
-        }
-        /* Footer (fixed version) */
+
+        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
             color: #fff;
@@ -547,6 +762,7 @@
             position: relative;
             margin-top: 60px;
         }
+
         footer::before {
             content: '';
             position: absolute;
@@ -556,6 +772,7 @@
             height: 6px;
             background: linear-gradient(to right, var(--red), var(--yellow), var(--green), var(--primary-blue));
         }
+
         .footer-content {
             display: flex;
             flex-direction: column;
@@ -563,6 +780,7 @@
             text-align: center;
             gap: 28px;
         }
+
         .footer-links {
             display: flex;
             flex-wrap: wrap;
@@ -570,20 +788,24 @@
             gap: 24px;
             font-size: 0.98rem;
         }
+
         .footer-links a {
             color: white;
             text-decoration: none;
             opacity: 0.9;
             transition: all 0.3s ease;
         }
+
         .footer-links a:hover {
             opacity: 1;
             transform: translateY(-2px);
         }
+
         .footer-social {
             display: flex;
             gap: 22px;
         }
+
         .footer-social a {
             width: 48px;
             height: 48px;
@@ -596,17 +818,20 @@
             color: white;
             transition: all 0.35s ease;
         }
+
         .footer-social a:hover {
             background: white;
             color: var(--primary-blue);
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
+
         .copyright {
             font-size: 0.92rem;
             opacity: 0.85;
             margin-top: 12px;
         }
+
         .back-to-top {
             display: inline-block;
             color: white;
@@ -615,14 +840,17 @@
             opacity: 0.8;
             transition: all 0.3s;
         }
+
         .back-to-top:hover {
             opacity: 1;
             transform: translateY(-4px);
         }
+
         @media (max-width: 600px) {
             .footer-links { gap: 16px; font-size: 0.92rem; }
             .footer-social a { width: 44px; height: 44px; font-size: 1.25rem; }
         }
+
         /* Reduced Motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -631,13 +859,15 @@
                 transition-duration: 0s !important;
             }
         }
-        /* === CHATBOT STYLES (slightly improved spacing & modern look) === */
+
+        /* Chatbot styles (unchanged) */
         #chatbot {
             position: fixed;
             bottom: 24px;
             right: 24px;
             z-index: 1000;
         }
+
         #chat-toggle-btn {
             width: 64px;
             height: 64px;
@@ -653,10 +883,12 @@
             align-items: center;
             justify-content: center;
         }
+
         #chat-toggle-btn:hover {
             transform: scale(1.1);
             box-shadow: 0 12px 35px rgba(66,133,244,0.55);
         }
+
         #chat-window {
             display: none;
             flex-direction: column;
@@ -670,9 +902,11 @@
             right: 0;
             overflow: hidden;
         }
+
         #chat-window.open {
             display: flex;
         }
+
         .chat-header {
             background: var(--primary-blue);
             color: white;
@@ -682,6 +916,7 @@
             align-items: center;
             font-weight: 600;
         }
+
         #chat-close-btn {
             background: none;
             border: none;
@@ -690,9 +925,11 @@
             cursor: pointer;
             padding: 0 8px;
         }
+
         #chat-close-btn:hover {
             opacity: 0.8;
         }
+
         #chat-messages {
             flex: 1;
             overflow-y: auto;
@@ -702,6 +939,7 @@
             gap: 12px;
             background: var(--background);
         }
+
         .message {
             max-width: 82%;
             padding: 12px 18px;
@@ -710,18 +948,21 @@
             line-height: 1.5;
             word-wrap: break-word;
         }
+
         .message.user {
             align-self: flex-end;
             background: var(--primary-blue);
             color: white;
             border-bottom-right-radius: 6px;
         }
+
         .message.bot {
             align-self: flex-start;
             background: var(--accent-background);
             color: var(--text-color);
             border-bottom-left-radius: 6px;
         }
+
         .chat-input-area {
             display: flex;
             padding: 16px;
@@ -729,6 +970,7 @@
             gap: 10px;
             background: var(--background);
         }
+
         #chat-input {
             flex: 1;
             padding: 14px 18px;
@@ -739,9 +981,11 @@
             color: var(--text-color);
             outline: none;
         }
+
         #chat-input:focus {
             border-color: var(--primary-blue);
         }
+
         #chat-send-btn {
             width: 52px;
             height: 52px;
@@ -753,43 +997,65 @@
             font-size: 22px;
             transition: all 0.25s;
         }
+
         #chat-send-btn:hover {
             transform: scale(1.08);
         }
+
         body.dark-mode .message.bot {
             background: #222;
         }
+
         body.dark-mode .chat-input-area {
             border-top-color: #333;
         }
+
         body.dark-mode #chat-input {
             border-color: #444;
+        }
+
+        /* Progress bar (you had #progress-bar in HTML but no style – adding basic one) */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary-blue);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.2s ease;
         }
     </style>
 </head>
 <body>
     <div id="progress-bar"></div>
+
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Abhishek Choubey</div>
-                <ul>
+                <div class="logo">
+                    <span class="logo-primary">Abhishek</span>
+                    <span class="logo-secondary">Choubey</span>
+                </div>
+
+                <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#competitive">Competitive</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://github.com/choubey-abhishek" class="github-btn">GitHub</a></li>
-                    <li><a href="Abhishek_Choubey_Software_Engineer resume.pdf" download class="resume-btn">Resume</a></li>
                 </ul>
-                <div class="hamburger">☰</div>
-                <div class="theme-toggle">🌙</div>
+
+                <div class="nav-actions">
+                    <a href="https://github.com/choubey-abhishek" class="action-btn github-btn">GitHub</a>
+                    <a href="Abhishek_Choubey_Software_Engineer resume.pdf" download class="action-btn resume-btn">Resume</a>
+                    <button class="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+                    <div class="hamburger" aria-label="Toggle menu">☰</div>
+                </div>
             </nav>
         </div>
     </header>
-
-    <!-- Your hero, about, skills, projects, competitive, footer sections remain EXACTLY the same -->
 
     <section id="hero">
         <div class="wave">
@@ -927,6 +1193,7 @@
                         <a href="https://github.com/choubey-abhishek/url-shortener" class="project-btn">GitHub</a>
                     </div>
                 </div>
+
                 <div class="project-card reveal" data-category="javascript">
                     <div class="image-wrapper">
                         <img data-src="Speed testing.png" alt="Typing Speed Tester" loading="lazy">
@@ -947,6 +1214,7 @@
                         <a href="https://choubey-abhishek.github.io/Typing-Speed-Master" class="project-btn">Live</a>
                     </div>
                 </div>
+
                 <div class="project-card reveal" data-category="full-stack">
                     <div class="image-wrapper">
                         <video width="100%" autoplay loop muted playsinline>
@@ -983,7 +1251,7 @@
                     <p>Algorithmic problems solved on LeetCode (Java-focused)</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon"></></span>
+                    <span class="icon">👨‍💻</span>
                     <p>Strong command over arrays, strings, recursion, trees, graphs, and dynamic programming</p>
                 </div>
                 <div class="achievement-card reveal">
@@ -1022,16 +1290,14 @@
                     <a href="https://leetcode.com/u/choubey-abhishek" aria-label="LeetCode">💻</a>
                 </div>
                 <div class="copyright">
-                    © 2026 Abhishek Choubey • Built with ❤️ in Indore
+                    © 2026 Abhishek Choubey
                 </div>
                 <a href="#" class="back-to-top">↑ Back to Top</a>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================= -->
-    <!--               NEW LOCAL CHATBOT               -->
-    <!-- ============================================= -->
+    <!-- Chatbot -->
     <div id="chatbot">
         <button id="chat-toggle-btn">💬</button>
         <div id="chat-window">
@@ -1050,9 +1316,7 @@
     </div>
 
     <script>
-        // ────────────────────────────────────────────────
-        //  Your original scripts (progress bar, theme, hamburger, reveal, etc.)
-        // ────────────────────────────────────────────────
+        // Theme toggle
         const themeToggle = document.querySelector('.theme-toggle');
         const body = document.body;
         themeToggle.addEventListener('click', () => {
@@ -1060,23 +1324,27 @@
             themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
 
+        // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
-        const navUl = document.querySelector('nav ul');
+        const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
-            navUl.classList.toggle('active');
+            navLinks.classList.toggle('active');
         });
 
+        // Progress bar + active nav link
         const updateScroll = () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById('progress-bar').style.width = scrolled + '%';
+
             let current = '';
             document.querySelectorAll('section').forEach(section => {
                 const sectionTop = section.offsetTop - 100;
                 if (pageYOffset >= sectionTop) current = section.getAttribute('id');
             });
-            document.querySelectorAll('nav ul li a').forEach(a => {
+
+            document.querySelectorAll('.nav-links a').forEach(a => {
                 a.classList.remove('active');
                 if (a.getAttribute('href') === `#${current}`) a.classList.add('active');
             });
@@ -1098,6 +1366,7 @@
             document.body.classList.add('loaded');
         });
 
+        // Project filter
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         filterBtns.forEach(btn => {
@@ -1114,6 +1383,7 @@
         });
         document.querySelector('.filter-btn.active')?.click();
 
+        // Lazy load images
         const lazyImages = document.querySelectorAll('img[data-src]');
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
@@ -1131,6 +1401,7 @@
             lazyImages.forEach(img => img.src = img.dataset.src);
         }
 
+        // Scroll reveal + counters
         const scrollElements = document.querySelectorAll('.reveal, .counter');
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1156,11 +1427,10 @@
                 }
             });
         }, { rootMargin: '-50px' });
+
         scrollElements.forEach(el => scrollObserver.observe(el));
 
-        // ────────────────────────────────────────────────
-        //                 LOCAL CHATBOT LOGIC
-        // ────────────────────────────────────────────────
+        // Chatbot logic (unchanged)
         const chatToggleBtn = document.getElementById('chat-toggle-btn');
         const chatWindow = document.getElementById('chat-window');
         const chatCloseBtn = document.getElementById('chat-close-btn');
@@ -1197,7 +1467,6 @@
 
         function getReply(message) {
             const text = message.toLowerCase().trim();
-
             if (text.includes('hi') || text.includes('hello') || text === 'hey') {
                 return replies.greeting[Math.floor(Math.random() * replies.greeting.length)];
             }
@@ -1219,25 +1488,20 @@
             if (text.includes('competitive') || text.includes('cp') || text.includes('hacker rank')) {
                 return replies.competitive;
             }
-
             return replies.default;
         }
 
         function sendMessage() {
             const text = chatInput.value.trim();
             if (!text) return;
-
             addMessage(text, true);
             chatInput.value = '';
-
-            // Slight delay to feel more natural
             setTimeout(() => {
                 addMessage(getReply(text));
             }, 400);
         }
 
         chatSendBtn.addEventListener('click', sendMessage);
-
         chatInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
