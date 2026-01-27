@@ -386,7 +386,7 @@
         .achievement-card:hover,
         .experience-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 28px rgba(66,133,244,0.15);
+            box-shadow: 0 12px 28px rgba(55,111,222,0.13);
         }
 
         /* FIX 4 — Stop hover animations on mobile */
@@ -985,8 +985,8 @@
             <span></span>
         </div>
         <div class="hero-content container">
-            <h1>Software Engineer | Backend & Full-Stack Developer</h1>
-            <p>I’m Abhishek Choubey, a Computer Science undergraduate passionate about building scalable systems, solving complex problems, and writing clean, efficient code.</p>
+            <h1>Software Engineer | Backend & Full-Stack</h1>
+            <p>I’m Abhishek Choubey, a CS undergraduate passionate about building scalable systems and writing clean, efficient code</p>
             <div class="cta-buttons">
                 <a href="#projects" class="cta-btn">View Projects</a>
                 <a href="https://github.com/choubey-abhishek" class="cta-btn">GitHub Profile</a>
@@ -1176,7 +1176,7 @@
                     <p>Algorithmic problems solved on LeetCode (Java-focused)</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">🧠</span>
+                    <span class="icon"></></span>
                     <p>Strong command over arrays, strings, recursion, trees, graphs, and dynamic programming</p>
                 </div>
                 <div class="achievement-card reveal">
@@ -1189,40 +1189,68 @@
                     <p>Acceptance rate with consistent problem-solving discipline</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">📜</span>
+                    <span class="icon">📝</span>
                     <p>HackerRank Python (Basic) Certification</p>
-                    <li><a href="python_basic certificater.pdf" download class="resume-btn">Resume</a></li>
+                    <li><a href="python_basic certificater.pdf" download class="resume-btn">Certificate</a></li>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
-          <div class="footer-social">
-    <a href="https://yourwebsite.com" aria-label="Portfolio / Personal Website" class="social-logo">
-        <img src="https://via.placeholder.com/32x32/000000/ffffff?text=AC" alt="Abhishek Choubey Logo" class="logo-img">
-        <!-- OR use SVG / actual logo image instead of placeholder -->
-    </a>
-    
-    <a href="mailto:abhishekchoubey312@gmail.com" aria-label="Email">Email</a>
-    <a href="https://github.com/choubey-abhishek" aria-label="GitHub">GitHub</a>
-    <a href="https://linkedin.com/in/abhishek-choubey" aria-label="LinkedIn">LinkedIn</a>
-    <a href="https://leetcode.com/u/choubey-abhishek" aria-label="LeetCode">LeetCode</a>
-</div>
-            <div class="copyright">
-                © 2026 Abhishek Choubey
-            </div>
+    <footer class="site-footer">
+    <div class="container footer-content">
+        <!-- Logo / Brand -->
+        <div class="footer-brand">
+            <a href="#" class="logo-link" aria-label="Abhishek Choubey - Back to Top">
+                <!-- Try your GitHub avatar first -->
+                <img 
+                    src="https://avatars.githubusercontent.com/u/123456789?v=4"  <!-- ← REPLACE 123456789 with YOUR actual GitHub user ID -->
+                    alt="Abhishek Choubey" 
+                    class="footer-logo"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" <!-- fallback if image fails -->
+                >
+                <!-- Nice emoji fallback if avatar doesn't load -->
+                <div class="logo-fallback" style="display:none;">
+                    <span class="emoji-logo">🅰🅲</span>
+                </div>
+                <span class="brand-name">Abhishek Choubey</span>
+            </a>
         </div>
-    </footer>
 
+        <!-- Navigation Links -->
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Social Icons with hover effects -->
+        <div class="footer-social">
+            <a href="https://github.com/choubey-abhishek" target="_blank" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/abhishek-choubey" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:abhishekchoubey312@gmail.com" title="Email me" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://leetcode.com/u/choubey-abhishek" target="_blank" title="LeetCode" aria-label="LeetCode">
+                <i class="fas fa-code"></i> <!-- or use LeetCode logo if you add it -->
+            </a>
+        </div>
+
+        <!-- Copyright + Back to Top -->
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Abhishek Choubey • Built with ❤️ in Indore</p>
+            <a href="#" class="back-to-top" aria-label="Back to Top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+</footer>
     <!-- CHATBOT HTML -->
     <div id="chatbot">
         <button id="chat-toggle-btn">💬</button>
