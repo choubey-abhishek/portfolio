@@ -1,224 +1,102 @@
-Abhishek Choubey — Software Engineer Portfolio
+# Abhishek Choubey – Software Engineer Portfolio
 
-A production-quality personal portfolio website built to showcase my work as a Backend-focused Software Engineer with Full-Stack experience.
-The site emphasizes performance, maintainability, and engineering fundamentals over unnecessary abstractions.
+A modern, responsive, and performance-optimized personal portfolio website showcasing my skills, projects, and achievements as a Software Engineer with a focus on backend and full-stack development.
 
-Live Site:
-https://choubey-abhishek.github.io/Abhishek-choubey-portfolio/
+Live Demo: (Add your deployed link here)  
+GitHub Profile:choubey-abhishek.github.io/portfolio
 
-GitHub:
-https://github.com/choubey-abhishek
+---
 
-Purpose
+## About the Project
 
-This portfolio is not just a visual resume—it is an engineering artifact.
+This portfolio is a single-page web application built using HTML, CSS, and JavaScript. It is designed to present my technical background, engineering projects, and competitive programming experience in a clear and professional manner.
 
-The goal was to build a fast, responsive, and accessible website using core web technologies, while applying real-world software engineering principles such as:
+The website emphasizes performance, accessibility, clean design, and maintainable code, making it suitable for technical recruiters and hiring managers.
 
-performance optimization
+---
 
-clean separation of concerns
+## Features
 
-progressive enhancement
+- Dark and light mode toggle  
+- Fully responsive layout for mobile, tablet, and desktop  
+- Smooth scrolling with active navigation highlighting  
+- Project filtering by category (Backend, Full-Stack, JavaScript)  
+- Animated counters for achievements  
+- Lazy loading for images and media  
+- Interactive chatbot assistant  
+- Scroll progress indicator  
+- Modern UI with glassmorphism and subtle animations  
+- Reduced motion support for accessibility
 
-defensive client-side logic
+---
 
-scalable UI architecture without frameworks
+## Tech Stack
 
-Everything you see here is intentionally built without frontend frameworks to demonstrate fundamentals rather than dependencies.
+### Frontend
+- HTML5  
+- CSS3 (custom properties, animations, responsive design)  
+- JavaScript (Vanilla)
 
-Engineering Highlights
-Performance & Optimization
+### Backend Concepts Demonstrated
+- RESTful API design  
+- Authentication and authorization (JWT-based, project-level)  
+- Caching and performance optimization  
+- System design fundamentals
 
-Lazy loading using IntersectionObserver
+### Tools and Practices
+- Git and GitHub  
+- Visual Studio Code  
+- Postman  
+- Performance optimization techniques  
+- Clean code and modular structure  
 
-Scroll handling optimized with requestAnimationFrame
+---
 
-Animations disabled post-load to reduce runtime overhead
+## Website Sections
 
-Zero build step, zero framework overhead
+### Hero
+- Introduction and professional summary  
+- Call-to-action links  
+- Key statistics highlighting experience  
 
-Minimal network requests and optimized font loading
+### About
+- Educational background  
+- Engineering interests  
+- Career objectives  
 
-UX & Accessibility
+### Skills
+- Programming languages  
+- Backend and web development  
+- Core computer science fundamentals  
+- Development tools and best practices  
 
-Fully responsive layout (mobile-first)
+### Projects
+Highlighted projects include:
+- Scalable URL Shortener Service (Node.js, MongoDB)  
+- Real-Time Typing Speed Tester  
+- Full-Stack Educational Platform (MERN)
 
-Dark mode with runtime theme switching
+Each project includes a description, technology stack, and repository or live demo links.
 
-Reduced-motion support for accessibility
+### Competitive Programming and Achievements
+- Solved 300+ algorithmic problems on LeetCode (Java-focused)  
+- Strong understanding of data structures and algorithms  
+- HackerRank Python (Basic) certification  
+- Regular practice of Google-tagged problems  
 
-Keyboard-friendly navigation
+### Chatbot Assistant
+An embedded chatbot that provides information about skills, projects, education, competitive programming, and contact details.
 
-Semantic HTML for screen readers and SEO
+---
 
-Architecture Decisions
+## Project Structure
 
-Vanilla HTML/CSS/JavaScript for predictability and control
-
-CSS variables for scalable theming
-
-Modular JS logic (scroll, filters, observers, chatbot)
-
-Clear separation between UI behavior and presentation
-
-Features
-
-Hero Section
-
-Animated wave background with GPU-safe transforms
-
-Clear positioning statement and technical focus
-
-Skills & Experience
-
-Structured by domain rather than buzzwords
-
-Emphasis on core CS fundamentals
-
-Projects
-
-Filterable project grid
-
-Engineering-focused descriptions (not marketing copy)
-
-Clear tech stack attribution per project
-
-Competitive Programming
-
-300+ DSA problems solved (Java-focused)
-
-Strong fundamentals across trees, graphs, DP, recursion
-
-AI Portfolio Assistant
-
-Integrated chatbot using Google Gemini API
-
-Context-aware responses about projects and skills
-
-Designed as a lightweight assistant, not a gimmick
-
-Tech Stack
-Frontend
-
-HTML5 (semantic, accessible)
-
-CSS3 (custom properties, Grid, Flexbox)
-
-JavaScript (ES6+)
-
-Backend / APIs
-
-Google Gemini API (client-side integration for demo purposes)
-
-Tools & Practices
-
-Git & GitHub
-
-REST principles
-
-Performance profiling
-
-Debugging-first development
-
-Clean, readable code over clever abstractions
-
-Selected Projects
-Scalable URL Shortener Service
-
-Base62 encoding for short ID generation
-
-Collision handling and indexing
-
-Optimized for low-latency redirects
-
-Backend-focused system design
-
-Tech: Node.js, Express, MongoDB
-Repo: https://github.com/choubey-abhishek/url-shortener
-
-Real-Time Typing Speed Tester & Analytics
-
-Live WPM and accuracy calculation
-
-Optimized input processing (~45% latency reduction)
-
-Clean separation of logic and UI updates
-
-Tech: JavaScript, HTML, CSS, Node.js
-Repo: https://github.com/choubey-abhishek/Typing-Speed-Master
-
-Live: https://choubey-abhishek.github.io/Typing-Speed-Master
-
-Full-Stack Educational Platform (MERN)
-
-JWT-based authentication
-
-Course and progress management
-
-Modular backend structure
-
-Tech: MongoDB, Express, React, Node.js
-
-Competitive Programming
-
-300+ problems solved on LeetCode (Java)
-
-Strong command over:
-
-Arrays, Strings
-
-Trees & Graphs
-
-Dynamic Programming
-
-Recursion & Backtracking
-
-Regular practice of Google-tagged problems
-
-HackerRank Python (Basic) Certified
-
-Repository Structure
-├── index.html        # Main portfolio page
-├── assets/           # Images and static assets
-├── resume.pdf        # Downloadable resume
-└── README.md         # Documentation
-
-Local Usage
-
-No build tools required.
-
-git clone https://github.com/choubey-abhishek/Abhishek-choubey-portfolio.git
-cd Abhishek-choubey-portfolio
-open index.html
-
-Chatbot Setup (Optional)
-
-Replace the placeholder Gemini API key in the script:
-
-const GEMINI_API_KEY = 'YOUR_API_KEY';
-
-
-For production usage, this should be moved to a secure backend.
-
-Roadmap
-
-Move AI assistant to a backend proxy
-
-Add automated Lighthouse audits
-
-CI/CD via GitHub Actions
-
-Blog section for technical deep dives
-
-System design case studies
-
-Contact
-
-Email: abhishekchoubey312@gmail.com
-
-LinkedIn: https://linkedin.com/in/abhishek-choubey
-
-GitHub: https://github.com/choubey-abhishek
-
-LeetCode: https://leetcode.com/u/choubey-abhishek
+```text
+├── index.html
+├── assets/
+│   ├── images/
+│   ├── videos/
+│   └── certificates/
+├── resume/
+│   └── Abhishek_Choubey_Software_Engineer_Resume.pdf
+└── README.md
