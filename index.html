@@ -1025,6 +1025,79 @@
             z-index: 9999;
             transition: width 0.2s ease;
         }
+
+        @media (max-width: 768px) {
+          #hero h1 {
+            font-size: 2.5rem;
+          }
+          #hero p {
+            font-size: 1.1rem;
+          }
+          section h2 {
+            font-size: 2.2rem;
+          }
+          section {
+            padding: 70px 0;
+          }
+          .logo {
+            font-size: 1.5rem;
+          }
+          .action-btn {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+          }
+          .cta-btn {
+            padding: 14px 30px;
+          }
+          .stat span {
+            font-size: 2.2rem;
+          }
+          .stat-desc {
+            font-size: 1rem;
+          }
+          #hero .wave span {
+            width: 300vw;
+            height: 300vw;
+            transform: translate(-50%, -60%);
+          }
+        }
+
+        @media (max-width: 480px) {
+          #hero h1 {
+            font-size: 2rem;
+          }
+          #hero p {
+            font-size: 1rem;
+          }
+          section h2 {
+            font-size: 1.8rem;
+          }
+          section {
+            padding: 50px 0;
+          }
+          .container {
+            padding: 0 15px;
+          }
+          .stats {
+            flex-direction: column;
+          }
+          .stat {
+            min-width: auto;
+          }
+          .project-card .image-wrapper {
+            height: 180px;
+          }
+          .achievement-card .icon {
+            font-size: 3rem;
+          }
+          .achievement-card .counter {
+            font-size: 3rem;
+          }
+          #chat-window {
+            width: calc(100vw - 30px);
+            height: 80vh;
+          }
+        }
     </style>
 </head>
 <body>
