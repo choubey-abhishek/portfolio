@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap">
     <style>
-        /* CSS Variables – Google Color Palette */
+        /* CSS Variables â€“ Google Color Palette */
         :root {
             --primary-blue: #4285F4;
             --blue-dark: #1A73E8;
@@ -43,7 +43,7 @@
             --card-shadow: 0 10px 30px rgba(0,0,0,0.35);
             --subtle-gradient: linear-gradient(135deg, rgba(66,133,244,0.06) 0%, rgba(244,180,0,0.06) 100%);
         }
-        /* Global Body – Mobile-First Base */
+        /* Global Body â€“ Mobile-First Base */
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -59,7 +59,7 @@
             position: relative;
             font-size: 16px; /* Base font size for readability */
         }
-        /* Subtle floating dots – optimized */
+        /* Subtle floating dots â€“ optimized */
         body::before {
             content: '';
             position: absolute;
@@ -81,9 +81,9 @@
         body.loaded::before { animation: none; }
         h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; } /* Mobile padding */
-        /* ------------------------------------------------
-           Modern Glassmorphism Header + Navbar – Mobile-First
-        ------------------------------------------------- */
+        /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+           Modern Glassmorphism Header + Navbar â€“ Mobile-First
+        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
         header {
             position: fixed; /* Better for mobile */
             top: 0;
@@ -241,9 +241,9 @@
             padding: 8px;
             color: var(--text-color);
         }
-        /* ------------------------------------------------
-           Modern Cards – Mobile-First
-        ------------------------------------------------- */
+        /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+           Modern Cards â€“ Mobile-First
+        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
         .highlight-card,
         .skill-card,
         .project-card,
@@ -277,7 +277,7 @@
             box-shadow: 0 20px 40px rgba(66,133,244,0.18);
             border-color: rgba(66,133,244,0.25);
         }
-        /* Entrance animation – staggered */
+        /* Entrance animation â€“ staggered */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -325,7 +325,7 @@
             transition: all 0.35s ease;
         }
         .skill-card li::before {
-            content: '?';
+            content: 'â–¹';
             position: absolute;
             left: 0;
             color: var(--primary-blue);
@@ -340,7 +340,7 @@
         .skill-card li:hover::before {
             transform: translateX(8px);
         }
-        /* Project card – Mobile-First */
+        /* Project card â€“ Mobile-First */
         .project-card .image-wrapper {
             border-radius: 20px 20px 0 0;
             overflow: hidden;
@@ -379,7 +379,7 @@
             font-size: 1.05rem;
             opacity: 0.9;
         }
-        /* Achievement card – Mobile-First */
+        /* Achievement card â€“ Mobile-First */
         .achievement-card {
             text-align: center;
             padding: 32px 20px; /* Mobile padding */
@@ -399,9 +399,9 @@
             font-size: 1.1rem;
             opacity: 0.92;
         }
-        /* ------------------------------------------------
-           Rest of styles – Mobile-First
-        ------------------------------------------------- */
+        /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+           Rest of styles â€“ Mobile-First
+        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
         #hero {
             position: relative;
             min-height: 80vh; /* Mobile height */
@@ -635,7 +635,7 @@
             grid-template-columns: 1fr; /* Single column mobile */
             gap: 30px;
         }
-        /* Footer – Mobile-First */
+        /* Footer â€“ Mobile-First */
         footer {
             background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
             color: #fff;
@@ -716,7 +716,7 @@
             opacity: 1;
             transform: translateY(-4px);
         }
-        /* Chatbot styles – Mobile-First */
+        /* Chatbot styles â€“ Mobile-First */
         #chatbot {
             position: fixed;
             bottom: 24px;
@@ -869,7 +869,7 @@
                 transition-duration: 0s !important;
             }
         }
-        /* Tablet and Desktop Enhancements – Mobile-First with min-width */
+        /* Tablet and Desktop Enhancements â€“ Mobile-First with min-width */
         @media (min-width: 769px) {
             .container { padding: 0 20px; }
             nav {
@@ -979,8 +979,8 @@
                 <div class="nav-actions">
                     <a href="https://github.com/choubey-abhishek" class="action-btn github-btn">GitHub</a>
                     <a href="Abhishek_Choubey_Software_Engineer resume.pdf" download class="action-btn resume-btn">Resume</a>
-                    <button class="theme-toggle" aria-label="Toggle dark/light mode">??</button>
-                    <div class="hamburger" aria-label="Toggle menu">?</div>
+                    <button class="theme-toggle" aria-label="Toggle dark/light mode">ðŸŒ™</button>
+                    <div class="hamburger" aria-label="Toggle menu">â˜°</div>
                 </div>
             </nav>
         </div>
@@ -993,7 +993,7 @@
         </div>
         <div class="hero-content container">
             <h1>Software Engineer | Backend & Full-Stack</h1>
-            <p>I’m Abhishek Choubey, a CS undergraduate passionate about building scalable systems and writing clean, efficient code</p>
+            <p>Iâ€™m Abhishek Choubey, a CS undergraduate passionate about building scalable systems and writing clean, efficient code</p>
             <div class="cta-buttons">
                 <a href="#projects" class="cta-btn">View Projects</a>
                 <a href="https://github.com/choubey-abhishek" class="cta-btn">GitHub Profile</a>
@@ -1001,7 +1001,7 @@
             <div class="stats">
                 <div class="stat">
                     <span>300+</span>
-                    <div class="stat-desc">DSA Problems Solved<br>(LeetCode – Java)</div>
+                    <div class="stat-desc">DSA Problems Solved<br>(LeetCode â€“ Java)</div>
                 </div>
                 <div class="stat">
                     <span>5+</span>
@@ -1018,7 +1018,7 @@
         <div class="container">
             <div class="text">
                 <h2>About Me</h2>
-                <p>I am a B.Tech Computer Science student (2023–2026) with a strong interest in software engineering, backend systems, and full-stack development.</p>
+                <p>I am a B.Tech Computer Science student (2023â€“2026) with a strong interest in software engineering, backend systems, and full-stack development.</p>
                 <p>My core strengths lie in data structures, algorithms, object-oriented programming, and problem solving. I enjoy building practical applications that involve API design, performance optimization, and debugging complex issues.</p>
                 <p>I have hands-on experience developing backend services, automation systems, and data-driven applications using Java, Python, JavaScript, Node.js, and MongoDB. Alongside development, I actively practice competitive programming to strengthen my fundamentals and write efficient, scalable code.</p>
                 <p>I am currently seeking software engineering internship or entry-level opportunities where I can learn from experienced engineers and contribute to meaningful real-world systems.</p>
@@ -1026,7 +1026,7 @@
             <div class="highlights">
                 <div class="highlight-card reveal">
                     <h3>Education</h3>
-                    <p>B.Tech Computer Science (2023–2026)</p>
+                    <p>B.Tech Computer Science (2023â€“2026)</p>
                 </div>
                 <div class="highlight-card reveal">
                     <h3>Backend Focus</h3>
@@ -1177,7 +1177,7 @@
                         </div>
                     </div>
 
-                    <h3>Instastrategix – Digital Marketing Agency Website</h3>
+                    <h3>Instastrategix â€“ Digital Marketing Agency Website</h3>
 
                     <p>
                         Developed a responsive and modern website for Instastrategix, a digital
@@ -1206,25 +1206,25 @@
             <h2>Competitive Programming & Achievements</h2>
             <div class="achievements-grid">
                 <div class="achievement-card reveal">
-                    <span class="icon">??</span>
+                    <span class="icon">ðŸ†</span>
                     <span class="counter" data-count="300">0</span><span style="font-size:2rem;font-weight:900;color:var(--primary-blue);">+</span>
                     <p>Algorithmic problems solved on LeetCode (Java-focused)</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">?????</span>
+                    <span class="icon">ðŸ‘¨â€ðŸ’»</span>
                     <p>Strong command over arrays, strings, recursion, trees, graphs, and dynamic programming</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">??</span>
+                    <span class="icon">ðŸ”</span>
                     <p>Regular practice of Google-tagged problems</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">??</span>
+                    <span class="icon">ðŸ“ˆ</span>
                     <span class="counter" data-count="90">0</span><span style="font-size:2rem;font-weight:900;color:var(--primary-blue);">%</span>
                     <p>Acceptance rate with consistent problem-solving discipline</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">??</span>
+                    <span class="icon">ðŸ“</span>
                     <p>HackerRank Python (Basic) Certification</p>
                     <a href="python_basic certificater.pdf" download class="project-btn" style="margin-top:12px; display:inline-block;">View Certificate</a>
                 </div>
@@ -1265,32 +1265,32 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="mailto:abhishekchoubey312@gmail.com" aria-label="Email">??</a>
-                    <a href="https://github.com/choubey-abhishek" aria-label="GitHub">??</a>
-                    <a href="https://linkedin.com/in/abhishek-choubey" aria-label="LinkedIn">??</a>
-                    <a href="https://leetcode.com/u/choubey-abhishek" aria-label="LeetCode">??</a>
+                    <a href="mailto:abhishekchoubey312@gmail.com" aria-label="Email">âœ‰ï¸</a>
+                    <a href="https://github.com/choubey-abhishek" aria-label="GitHub">ðŸ™</a>
+                    <a href="https://linkedin.com/in/abhishek-choubey" aria-label="LinkedIn">ðŸ’¼</a>
+                    <a href="https://leetcode.com/u/choubey-abhishek" aria-label="LeetCode">ðŸ’»</a>
                 </div>
                 <div class="copyright">
-                    © 2026 Abhishek Choubey
+                    Â© 2026 Abhishek Choubey
                 </div>
-                <a href="#" class="back-to-top">? Back to Top</a>
+                <a href="#" class="back-to-top">â†‘ Back to Top</a>
             </div>
         </div>
     </footer>
     <!-- Chatbot -->
     <div id="chatbot">
-        <button id="chat-toggle-btn">??</button>
+        <button id="chat-toggle-btn">ðŸ’¬</button>
         <div id="chat-window">
             <div class="chat-header">
                 <div>Abhishek's Assistant</div>
-                <button id="chat-close-btn">×</button>
+                <button id="chat-close-btn">Ã—</button>
             </div>
             <div id="chat-messages" class="chat-messages">
-                <div class="message bot">Hey! ?? I'm your personal portfolio assistant.<br>Ask me about my skills, projects, education, competitive programming or how to contact me!</div>
+                <div class="message bot">Hey! ðŸ‘‹ I'm your personal portfolio assistant.<br>Ask me about my skills, projects, education, competitive programming or how to contact me!</div>
             </div>
             <div class="chat-input-area">
                 <input id="chat-input" type="text" placeholder="Type your message...">
-                <button id="chat-send-btn">?</button>
+                <button id="chat-send-btn">âž¤</button>
             </div>
         </div>
     </div>
@@ -1300,20 +1300,20 @@
         const body = document.body;
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            themeToggle.textContent = body.classList.contains('dark-mode') ? '??' : '??';
+            themeToggle.textContent = body.classList.contains('dark-mode') ? 'â˜€ï¸' : 'ðŸŒ™';
         });
         // Hamburger menu - improved
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? '?' : '?';
+            hamburger.textContent = navLinks.classList.contains('active') ? 'âœ•' : 'â˜°';
         });
         // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                hamburger.textContent = '?';
+                hamburger.textContent = 'â˜°';
             });
         });
         // Progress bar + active nav link
@@ -1427,14 +1427,14 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
         const replies = {
-            default: "Hmm... ask me about my skills, projects, education, LeetCode stats, or how to contact me! ??",
-            greeting: ["Hey there!", "Hi! ??", "Hello! Ready to talk about code?"],
-            skills: "My main skills include:\n• Java (primary)\n• Node.js, Express, MongoDB\n• Data Structures & Algorithms\n• RESTful APIs\n• Python, JavaScript, C++\nWant more details?",
+            default: "Hmm... ask me about my skills, projects, education, LeetCode stats, or how to contact me! ðŸ˜Š",
+            greeting: ["Hey there!", "Hi! ðŸ‘‹", "Hello! Ready to talk about code?"],
+            skills: "My main skills include:\nâ€¢ Java (primary)\nâ€¢ Node.js, Express, MongoDB\nâ€¢ Data Structures & Algorithms\nâ€¢ RESTful APIs\nâ€¢ Python, JavaScript, C++\nWant more details?",
             projects: "I've built:\n1. Scalable URL Shortener (Node.js + MongoDB)\n2. Real-Time Typing Speed Tester\n3. Full-Stack Educational Platform (MERN)\nWhich one interests you?",
-            education: "I'm currently pursuing B.Tech in Computer Science (2023–2026).",
+            education: "I'm currently pursuing B.Tech in Computer Science (2023â€“2026).",
             dsa: "I've solved 300+ DSA problems on LeetCode (mostly Java). Strong in arrays, strings, trees, graphs, DP.",
-            contact: "You can reach me at:\n?? abhishekchoubey312@gmail.com\nGitHub: choubey-abhishek\nLinkedIn: abhishek-choubey\nLeetCode: choubey-abhishek",
-            competitive: "I'm active in competitive programming.\n• 300+ LeetCode problems\n• HackerRank Python (Basic) certified\n• Regular practice on Google-tagged problems"
+            contact: "You can reach me at:\nðŸ“§ abhishekchoubey312@gmail.com\nGitHub: choubey-abhishek\nLinkedIn: abhishek-choubey\nLeetCode: choubey-abhishek",
+            competitive: "I'm active in competitive programming.\nâ€¢ 300+ LeetCode problems\nâ€¢ HackerRank Python (Basic) certified\nâ€¢ Regular practice on Google-tagged problems"
         };
         function getReply(message) {
             const text = message.toLowerCase().trim();
