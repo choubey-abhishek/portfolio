@@ -1087,112 +1087,120 @@
             </div>
         </div>
     </section>
-   <!-- Replace your entire <section id="projects"> … </section> with this corrected version -->
 
-<section id="projects">
-    <div class="container">
-        <h2>Projects</h2>
-        <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="backend">Backend</button>
-            <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
-            <button class="filter-btn" data-filter="javascript">JavaScript</button>
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button> <!-- Added for your Instastrategix project -->
+            </div>
+            <div class="projects-grid">
+
+                <div class="project-card reveal" data-category="backend">
+                    <div class="image-wrapper">
+                        <video width="100%" autoplay loop muted playsinline>
+                            <source src="Scalable URL Shortener.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <p>High-performance URL shortener with Base62 encoding and caching</p>
+                        </div>
+                    </div>
+                    <h3>Scalable URL Shortener Service</h3>
+                    <p>Designed and implemented a high-performance URL shortening backend. Used Base62 encoding for unique ID generation with collision handling. Achieved low-latency redirection using indexing, caching, and rate limiting.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express</span>
+                        <span class="tech-badge">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/choubey-abhishek/url-shortener" class="project-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="javascript">
+                    <div class="image-wrapper">
+                        <img data-src="Speed testing.png" alt="Typing Speed Tester" loading="lazy">
+                        <div class="overlay">
+                            <p>Real-time WPM tracker with analytics dashboard</p>
+                        </div>
+                    </div>
+                    <h3>Real-Time Typing Speed Tester & Analytics Dashboard</h3>
+                    <p>Built a responsive web application calculating real-time WPM and accuracy. Reduced input-processing latency by 45% through algorithmic optimization.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/choubey-abhishek/Typing-Speed-Master" class="project-btn">GitHub</a>
+                        <a href="https://choubey-abhishek.github.io/Typing-Speed-Master" class="project-btn">Live</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="full-stack">
+                    <div class="image-wrapper">
+                        <video width="100%" autoplay loop muted playsinline>
+                            <source src="Full-Stack Educational.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <p>MERN stack learning platform with authentication</p>
+                        </div>
+                    </div>
+                    <h3>Full-Stack Educational Platform (MERN)</h3>
+                    <p>Developed a complete learning platform with authentication and progress tracking. Implemented JWT-based authentication and course management.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">Express</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-category="frontend">
+                    <div class="image-wrapper">
+                        <video width="100%" autoplay loop muted playsinline>
+                            <source src="ix.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <p>Modern and responsive digital marketing agency website</p>
+                        </div>
+                    </div>
+
+                    <h3>Instastrategix – Digital Marketing Agency Website</h3>
+
+                    <p>
+                        Developed a responsive and modern website for Instastrategix, a digital
+                        marketing agency. Implemented clean UI, smooth interactions, and structured
+                        layouts using pure frontend technologies to effectively showcase services,
+                        branding, and agency presence.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="project-btn">Live Demo</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="projects-grid">
-
-            <div class="project-card reveal" data-category="backend">
-                <div class="image-wrapper">
-                    <video width="100%" autoplay loop muted playsinline>
-                        <source src="Scalable URL Shortener.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="overlay">
-                        <p>High-performance URL shortener with Base62 encoding and caching</p>
-                    </div>
-                </div>
-                <h3>Scalable URL Shortener Service</h3>
-                <p>Designed and implemented a high-performance URL shortening backend. Used Base62 encoding for unique ID generation with collision handling. Achieved low-latency redirection using indexing, caching, and rate limiting.</p>
-                <div class="tech-stack">
-                    <span class="tech-badge">Node.js</span>
-                    <span class="tech-badge">Express</span>
-                    <span class="tech-badge">MongoDB</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/choubey-abhishek/url-shortener" class="project-btn">GitHub</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="javascript">
-                <div class="image-wrapper">
-                    <img data-src="Speed testing.png" alt="Typing Speed Tester" loading="lazy">
-                    <div class="overlay">
-                        <p>Real-time WPM tracker with analytics dashboard</p>
-                    </div>
-                </div>
-                <h3>Real-Time Typing Speed Tester & Analytics Dashboard</h3>
-                <p>Built a responsive web application calculating real-time WPM and accuracy. Reduced input-processing latency by 45% through algorithmic optimization.</p>
-                <div class="tech-stack">
-                    <span class="tech-badge">JavaScript</span>
-                    <span class="tech-badge">HTML</span>
-                    <span class="tech-badge">CSS</span>
-                    <span class="tech-badge">Node.js</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/choubey-abhishek/Typing-Speed-Master" class="project-btn">GitHub</a>
-                    <a href="https://choubey-abhishek.github.io/Typing-Speed-Master" class="project-btn">Live</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="full-stack">
-                <div class="image-wrapper">
-                    <video width="100%" autoplay loop muted playsinline>
-                        <source src="Full-Stack Educational.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="overlay">
-                        <p>MERN stack learning platform with authentication</p>
-                    </div>
-                </div>
-                <h3>Full-Stack Educational Platform (MERN)</h3>
-                <p>Developed a complete learning platform with authentication and progress tracking. Implemented JWT-based authentication and course management.</p>
-                <div class="tech-stack">
-                    <span class="tech-badge">MongoDB</span>
-                    <span class="tech-badge">Express</span>
-                    <span class="tech-badge">React</span>
-                    <span class="tech-badge">Node.js</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" class="project-btn">GitHub</a> <!-- ← add real link if available -->
-                    <!-- or <a href="..." class="project-btn">Live</a> -->
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="javascript">
-                <div class="image-wrapper">
-                    <img data-src="Instastrategix.png" alt="Instastrategix Digital Marketing Agency Website" loading="lazy">
-                    <div class="overlay">
-                        <p>Digital marketing agency website built with pure frontend technologies</p>
-                    </div>
-                </div>
-                <h3>Instastrategix – Digital Marketing Agency Website</h3>
-                <p>
-                    Developed a responsive and modern website for Instastrategix, a digital marketing agency.
-                    Implemented clean UI, smooth interactions, and structured layouts using HTML, CSS, and
-                    JavaScript to showcase services, branding, and agency presence.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-badge">HTML</span>
-                    <span class="tech-badge">CSS</span>
-                    <span class="tech-badge">JavaScript</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://choubey-abhishek.github.io/Instastrategix/" class="project-btn">Live</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
     </section>
+
     <section id="competitive">
         <div class="container">
             <h2>Competitive Programming & Achievements</h2>
@@ -1223,6 +1231,23 @@
             </div>
         </div>
     </section>
+
+    <!-- Placeholder sections so navigation links work -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <p>No professional experience listed yet. Add your internships or roles here when ready.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Feel free to reach out via email or social links below.</p>
+            <p>Email: <a href="mailto:abhishekchoubey312@gmail.com">abhishekchoubey312@gmail.com</a></p>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1316,7 +1341,7 @@
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
-        // Project filter
+        // Project filter - FIXED display bug
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         filterBtns.forEach(btn => {
@@ -1326,7 +1351,7 @@
                 const filter = btn.dataset.filter;
                 projectCards.forEach(card => {
                     const match = filter === 'all' || card.dataset.category === filter;
-                    card.style.display = match ? 'block' : 'none';
+                    card.style.display = match ? '' : 'none'; // Fixed: '' restores grid layout
                     card.classList.toggle('visible', match);
                 });
             });
