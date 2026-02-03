@@ -1,0 +1,376 @@
+/* CSS Variables + Upgrades */
+:root {
+    --primary-blue: #4285F4;
+    --blue-dark: #1A73E8;
+    --red: #DB4437;
+    --yellow: #F4B400;
+    --green: #0F9D58;
+    --white: #FFFFFF;
+    --text-color: #202124;
+    --background: var(--white);
+    --accent-background: #F8F9FA;
+    --card-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    --glow: 0 0 15px rgba(66,133,244,0.3);
+    --subtle-gradient: linear-gradient(135deg, rgba(66,133,244,0.03) 0%, rgba(244,180,0,0.03) 100%);
+    --gradient-shift: linear-gradient(135deg, rgba(66,133,244,0.05) 0%, rgba(244,180,0,0.05) 100%);
+    --particle-glow: rgba(66,133,244,0.08);
+}
+body.dark-mode {
+    --background: #0f0f0f;
+    --text-color: #E8EAED;
+    --accent-background: #1a1a1a;
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --gradient-shift: linear-gradient(135deg, rgba(66,133,244,0.08) 0%, rgba(244,180,0,0.08) 100%);
+    --particle-glow: rgba(66,133,244,0.15);
+}
+
+/* Body with breathing gradient */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    background-image: 
+        var(--gradient-shift),
+        radial-gradient(circle at 20% 30%, var(--particle-glow) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--particle-glow) 0%, transparent 40%);
+    background-size: 200% 200%, cover, cover;
+    background-position: 0% 0%;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    font-size: 16px;
+    overflow-x: hidden;
+    animation: subtleGradientShift 25s ease infinite;
+}
+@keyframes subtleGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating dots */
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, var(--primary-blue) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.02;
+    animation: floatDots 60s linear infinite;
+    z-index: -1;
+}
+@keyframes floatDots {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 30px); }
+}
+body.dark-mode::before { opacity: 0.04; }
+body.loaded::before { animation: none; }
+
+h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(66, 133, 244, 0.12);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+}
+body.dark-mode header {
+    background: rgba(15, 15, 15, 0.82);
+    backdrop-filter: blur(16px) saturate(160%);
+    border-bottom: 1px solid rgba(66, 133, 244, 0.20);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    gap: 24px;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.9px;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+.logo-primary {
+    background: linear-gradient(90deg, var(--primary-blue), #6aa0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.logo-secondary {
+    color: var(--text-color);
+    opacity: 0.92;
+    font-weight: 600;
+}
+.logo:hover {
+    transform: scale(1.03);
+    filter: brightness(1.08);
+}
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    padding: 28px 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+    border-radius: 0 0 16px 16px;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    margin: 0;
+}
+body.dark-mode .nav-links {
+    background: rgba(18, 18, 18, 0.96);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+.nav-links.active { display: flex; }
+.nav-links li a {
+    font-size: 1.15rem;
+    padding: 12px 0;
+    position: relative;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    width: 100%;
+}
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2.5px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+}
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--primary-blue);
+}
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 65%;
+}
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.action-btn {
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.32s ease;
+    text-decoration: none;
+}
+.github-btn {
+    background: transparent;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+.github-btn:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(66, 133, 244, 0.3);
+}
+.resume-btn {
+    background: var(--primary-blue);
+    color: white;
+    box-shadow: 0 4px 14px rgba(66, 133, 244, 0.28);
+}
+.resume-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(66, 133, 244, 0.45);
+}
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+    background: rgba(66, 133, 244, 0.12);
+    transform: rotate(25deg) scale(1.15);
+}
+.hamburger {
+    display: block;
+    font-size: 1.9rem;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--text-color);
+}
+
+/* Upgraded Cards (2026 style) */
+.highlight-card,
+.skill-card,
+.project-card,
+.achievement-card,
+.experience-card {
+    background: var(--accent-background);
+    border-radius: 24px;
+    padding: 24px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.55s cubic-bezier(0.34, 1.6, 0.64, 1);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(66,133,244,0.10);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+body.dark-mode .highlight-card,
+body.dark-mode .skill-card,
+body.dark-mode .project-card,
+body.dark-mode .achievement-card,
+body.dark-mode .experience-card {
+    background: linear-gradient(145deg, rgba(26,26,26,0.75), rgba(34,34,34,0.65));
+    border: 1px solid rgba(66,133,244,0.22);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    backdrop-filter: blur(12px);
+}
+.highlight-card:hover,
+.skill-card:hover,
+.project-card:hover,
+.achievement-card:hover,
+.experience-card:hover {
+    transform: translateY(-16px) scale(1.035);
+    box-shadow: 0 28px 60px rgba(66,133,244,0.22),
+                0 0 0 2px rgba(66,133,244,0.18);
+    border-color: rgba(66,133,244,0.45);
+}
+
+/* Project card special upgrades */
+.project-card {
+    background: rgba(248,249,250,0.4);
+    border: 1px solid rgba(66,133,244,0.12);
+    transform-style: preserve-3d;
+    perspective: 1200px;
+}
+body.dark-mode .project-card {
+    background: rgba(26,26,26,0.55);
+    border: 1px solid rgba(66,133,244,0.28);
+}
+.project-card:hover {
+    box-shadow: 0 32px 70px rgba(66,133,244,0.28),
+                inset 0 0 0 1px rgba(66,133,244,0.4);
+    transition: all 0.25s ease-out;
+}
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(45deg, var(--primary-blue), var(--yellow), var(--primary-blue));
+    background-size: 300% 300%;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: -1;
+    filter: blur(12px);
+}
+.project-card:hover::before {
+    opacity: 0.35;
+    animation: gradientFlow 4s ease infinite;
+    transform: scale(1.05);
+}
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.project-card .image-wrapper {
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.34, 1.6, 0.64, 1);
+    transform: translateZ(20px);
+}
+.project-card:hover .image-wrapper {
+    transform: scale(1.06) translateZ(20px);
+}
+.project-card img,
+.project-card video {
+    transition: transform 0.8s cubic-bezier(0.34, 1.6, 0.64, 1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project-card:hover img,
+.project-card:hover video {
+    transform: scale(1.18);
+}
+.project-card .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.25) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px 28px;
+    color: white;
+    transform: translateY(20px);
+}
+.project-card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+.project-card h3 { transform: translateZ(35px); }
+.project-card p,
+.project-card .tech-stack { transform: translateZ(15px); }
+.project-card .project-links { transform: translateZ(40px); }
+
+/* Rest of your styles (hero, sections, footer, chatbot, media queries, etc.) */
+#hero { /* your original hero styles */ }
+#hero .wave { /* ... */ }
+/* Include ALL your remaining original CSS here exactly as before */
+/* (Everything from hero, sections, footer, chatbot, progress bar, media queries, etc.) */
+
+/* Section glassmorphism */
+section {
+    padding: 60px 0;
+    position: relative;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 0 0 32px 32px;
+    margin: 0 16px 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+body.dark-mode section {
+    background: rgba(15,15,15,0.7);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+}
+
+/* Media queries (tablet/desktop) */
+@media (min-width: 769px) {
+    /* your existing media query styles */
+}
