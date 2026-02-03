@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap">
     <style>
-        /* CSS Variables â€“ Google Color Palette */
+        /* CSS Variables – Google Color Palette */
         :root {
             --primary-blue: #4285F4;
             --blue-dark: #1A73E8;
@@ -43,7 +43,7 @@
             --card-shadow: 0 10px 30px rgba(0,0,0,0.35);
             --subtle-gradient: linear-gradient(135deg, rgba(66,133,244,0.06) 0%, rgba(244,180,0,0.06) 100%);
         }
-        /* Global Body â€“ Mobile-First Base */
+        /* Global Body – Mobile-First Base */
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -59,7 +59,7 @@
             position: relative;
             font-size: 16px; /* Base font size for readability */
         }
-        /* Subtle floating dots â€“ optimized */
+        /* Subtle floating dots – optimized */
         body::before {
             content: '';
             position: absolute;
@@ -81,11 +81,10 @@
         body.loaded::before { animation: none; }
         h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; } /* Mobile padding */
-        /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-           Modern Glassmorphism Header + Navbar â€“ Mobile-First
-        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+        /* Modern Glassmorphism Header + Navbar – Mobile-First */
         header {
-            position: fixed; /* Better for mobile */
+            position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
@@ -106,11 +105,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 0; /* Mobile padding */
+            padding: 18px 0;
             gap: 24px;
         }
         .logo {
-            font-size: 1.5rem; /* Mobile size */
+            font-size: 1.5rem;
             font-weight: 800;
             letter-spacing: -0.9px;
             display: flex;
@@ -133,7 +132,7 @@
             filter: brightness(1.08);
         }
         .nav-links {
-            display: none; /* Hidden by default on mobile */
+            display: none;
             position: absolute;
             top: 100%;
             left: 0;
@@ -191,7 +190,7 @@
             gap: 14px;
         }
         .action-btn {
-            padding: 8px 20px; /* Mobile size */
+            padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.9rem;
@@ -221,7 +220,7 @@
         .theme-toggle {
             background: none;
             border: none;
-            font-size: 1.5rem; /* Mobile size */
+            font-size: 1.5rem;
             cursor: pointer;
             padding: 8px;
             border-radius: 50%;
@@ -235,15 +234,14 @@
             transform: rotate(25deg) scale(1.15);
         }
         .hamburger {
-            display: block; /* Always show on mobile */
-            font-size: 1.9rem; /* Mobile size */
+            display: block;
+            font-size: 1.9rem;
             cursor: pointer;
             padding: 8px;
             color: var(--text-color);
         }
-        /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-           Modern Cards â€“ Mobile-First
-        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+        /* Modern Cards – Mobile-First */
         .highlight-card,
         .skill-card,
         .project-card,
@@ -251,7 +249,7 @@
         .experience-card {
             background: var(--accent-background);
             border-radius: 20px;
-            padding: 24px 20px; /* Mobile padding */
+            padding: 24px 20px;
             position: relative;
             overflow: hidden;
             transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -277,7 +275,7 @@
             box-shadow: 0 20px 40px rgba(66,133,244,0.18);
             border-color: rgba(66,133,244,0.25);
         }
-        /* Entrance animation â€“ staggered */
+        /* Entrance animation – staggered */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -318,14 +316,14 @@
             margin: 0;
         }
         .skill-card li {
-            padding: 10px 0 10px 32px; /* Mobile padding */
+            padding: 10px 0 10px 32px;
             position: relative;
             font-size: 0.98rem;
             color: var(--text-color);
             transition: all 0.35s ease;
         }
         .skill-card li::before {
-            content: 'â–¹';
+            content: '►';
             position: absolute;
             left: 0;
             color: var(--primary-blue);
@@ -340,11 +338,11 @@
         .skill-card li:hover::before {
             transform: translateX(8px);
         }
-        /* Project card â€“ Mobile-First */
+        /* Project card – Mobile-First */
         .project-card .image-wrapper {
             border-radius: 20px 20px 0 0;
             overflow: hidden;
-            height: 180px; /* Mobile height */
+            height: 180px;
             position: relative;
         }
         .project-card img,
@@ -379,17 +377,17 @@
             font-size: 1.05rem;
             opacity: 0.9;
         }
-        /* Achievement card â€“ Mobile-First */
+        /* Achievement card – Mobile-First */
         .achievement-card {
             text-align: center;
-            padding: 32px 20px; /* Mobile padding */
+            padding: 32px 20px;
         }
         .achievement-card .icon {
-            font-size: 3rem; /* Mobile size */
+            font-size: 3rem;
             margin-bottom: 24px;
         }
         .achievement-card .counter {
-            font-size: 3rem; /* Mobile size */
+            font-size: 3rem;
             font-weight: 900;
             color: var(--primary-blue);
             line-height: 1;
@@ -399,12 +397,11 @@
             font-size: 1.1rem;
             opacity: 0.92;
         }
-        /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-           Rest of styles â€“ Mobile-First
-        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+        /* Rest of styles – Mobile-First */
         #hero {
             position: relative;
-            min-height: 80vh; /* Mobile height */
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -420,14 +417,14 @@
         }
         #hero .wave span {
             position: absolute;
-            width: 300vw; /* Mobile adjustment */
+            width: 300vw;
             height: 300vw;
             top: 0;
             left: 50%;
-            transform: translate(-50%, -60%);
+            transform: translate(-50%, -75%);
             will-change: transform;
             backface-visibility: hidden;
-            transform: translate(-50%, -60%) translateZ(0);
+            transform: translate(-50%, -75%) translateZ(0);
         }
         #hero .wave span:nth-child(1) {
             border-radius: 45%;
@@ -453,17 +450,17 @@
             z-index: 2;
             color: #fff;
             max-width: 900px;
-            padding: 0 16px; /* Mobile padding */
+            padding: 0 16px;
         }
         #hero h1 {
-            font-size: 2.1rem; /* Mobile size */
+            font-size: 2.1rem;
             margin-bottom: 12px;
             font-weight: 800;
             text-shadow: 0 0 20px rgba(0,0,0,0.4);
             line-height: 1.15;
         }
         #hero p {
-            font-size: 1.05rem; /* Mobile size */
+            font-size: 1.05rem;
             max-width: 720px;
             margin: 0 auto 30px;
             opacity: 0.95;
@@ -471,14 +468,14 @@
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 16px; /* Mobile gap */
+            gap: 16px;
             margin-bottom: 50px;
-            flex-direction: column; /* Stack on mobile */
+            flex-direction: column;
         }
         .cta-btn {
             background-color: rgba(255,255,255,0.25);
             color: #fff;
-            padding: 14px 30px; /* Mobile padding */
+            padding: 14px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -494,12 +491,12 @@
         .stats {
             display: flex;
             justify-content: center;
-            gap: 20px; /* Mobile gap */
-            flex-direction: column; /* Stack on mobile */
+            gap: 20px;
+            flex-direction: column;
         }
         .stat {
             background: rgba(255,255,255,0.2);
-            padding: 16px; /* Mobile padding */
+            padding: 16px;
             border-radius: 16px;
             min-width: auto;
             transition: all 0.5s ease;
@@ -511,24 +508,24 @@
         }
         .stat span {
             display: block;
-            font-size: 2.2rem; /* Mobile size */
+            font-size: 2.2rem;
             font-weight: 900;
             margin-bottom: 10px;
             color: var(--yellow);
             text-shadow: 0 0 15px rgba(244,180,0,0.5);
         }
         .stat-desc {
-            font-size: 1rem; /* Mobile size */
+            font-size: 1rem;
             font-weight: 600;
             color: #fff;
         }
         section {
-            padding: 60px 0; /* Mobile padding */
+            padding: 60px 0;
             position: relative;
         }
         section h2 {
             text-align: center;
-            font-size: 2.1rem; /* Mobile size */
+            font-size: 2.1rem;
             margin-bottom: 50px;
             position: relative;
         }
@@ -545,13 +542,13 @@
         }
         .highlights {
             display: grid;
-            grid-template-columns: 1fr; /* Single column mobile */
+            grid-template-columns: 1fr;
             gap: 30px;
             margin-top: 50px;
         }
         .skills-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Single column mobile */
+            grid-template-columns: 1fr;
             gap: 30px;
         }
         .project-filters {
@@ -584,7 +581,7 @@
         }
         .projects-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Single column mobile */
+            grid-template-columns: 1fr;
             gap: 30px;
         }
         .project-card h3 {
@@ -632,10 +629,10 @@
         }
         .achievements-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Single column mobile */
+            grid-template-columns: 1fr;
             gap: 30px;
         }
-        /* Footer â€“ Mobile-First */
+        /* Footer – Mobile-First */
         footer {
             background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
             color: #fff;
@@ -658,13 +655,13 @@
             align-items: center;
             text-align: center;
             gap: 28px;
-            padding: 0 16px; /* Mobile padding */
+            padding: 0 16px;
         }
         .footer-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 16px; /* Mobile gap */
+            gap: 16px;
             font-size: 0.92rem;
         }
         .footer-links a {
@@ -682,7 +679,7 @@
             gap: 22px;
         }
         .footer-social a {
-            width: 44px; /* Mobile size */
+            width: 44px;
             height: 44px;
             background: rgba(255,255,255,0.18);
             border-radius: 50%;
@@ -716,7 +713,7 @@
             opacity: 1;
             transform: translateY(-4px);
         }
-        /* Chatbot styles â€“ Mobile-First */
+        /* Chatbot styles – Mobile-First */
         #chatbot {
             position: fixed;
             bottom: 24px;
@@ -745,7 +742,7 @@
         #chat-window {
             display: none;
             flex-direction: column;
-            width: calc(100vw - 30px); /* Full width mobile */
+            width: calc(100vw - 30px);
             height: 80vh;
             background: var(--background);
             border-radius: 24px;
@@ -869,7 +866,7 @@
                 transition-duration: 0s !important;
             }
         }
-        /* Tablet and Desktop Enhancements â€“ Mobile-First with min-width */
+        /* Tablet and Desktop Enhancements */
         @media (min-width: 769px) {
             .container { padding: 0 20px; }
             nav {
@@ -878,7 +875,7 @@
             }
             .logo { font-size: 1.75rem; }
             .nav-links {
-                display: flex; /* Show on larger screens */
+                display: flex;
                 position: static;
                 flex-direction: row;
                 background: none;
@@ -901,7 +898,7 @@
                 font-size: 0.97rem;
             }
             .theme-toggle { font-size: 1.6rem; }
-            .hamburger { display: none; } /* Hide on larger screens */
+            .hamburger { display: none; }
             /* Hero */
             #hero {
                 min-height: 100vh;
@@ -919,7 +916,6 @@
             #hero .wave span {
                 width: 200vh;
                 height: 200vh;
-                transform: translate(-50%, -75%);
             }
             /* Sections */
             section { padding: 90px 0; }
@@ -954,9 +950,6 @@
             /* Chatbot */
             #chat-window { width: 360px; height: 520px; }
         }
-        @media (min-width: 1025px) {
-            /* Further desktop tweaks if needed */
-        }
     </style>
 </head>
 <body>
@@ -979,8 +972,8 @@
                 <div class="nav-actions">
                     <a href="https://github.com/choubey-abhishek" class="action-btn github-btn">GitHub</a>
                     <a href="Abhishek_Choubey_Software_Engineer resume.pdf" download class="action-btn resume-btn">Resume</a>
-                    <button class="theme-toggle" aria-label="Toggle dark/light mode">ðŸŒ™</button>
-                    <div class="hamburger" aria-label="Toggle menu">â˜°</div>
+                    <button class="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+                    <div class="hamburger" aria-label="Toggle menu">☰</div>
                 </div>
             </nav>
         </div>
@@ -993,7 +986,7 @@
         </div>
         <div class="hero-content container">
             <h1>Software Engineer | Backend & Full-Stack</h1>
-            <p>Iâ€™m Abhishek Choubey, a CS undergraduate passionate about building scalable systems and writing clean, efficient code</p>
+            <p>I’m Abhishek Choubey, a CS undergraduate passionate about building scalable systems and writing clean, efficient code</p>
             <div class="cta-buttons">
                 <a href="#projects" class="cta-btn">View Projects</a>
                 <a href="https://github.com/choubey-abhishek" class="cta-btn">GitHub Profile</a>
@@ -1001,7 +994,7 @@
             <div class="stats">
                 <div class="stat">
                     <span>300+</span>
-                    <div class="stat-desc">DSA Problems Solved<br>(LeetCode â€“ Java)</div>
+                    <div class="stat-desc">DSA Problems Solved<br>(LeetCode – Java)</div>
                 </div>
                 <div class="stat">
                     <span>5+</span>
@@ -1016,17 +1009,15 @@
     </section>
     <section id="about">
         <div class="container">
-            <div class="text">
-                <h2>About Me</h2>
-                <p>I am a B.Tech Computer Science student (2023â€“2026) with a strong interest in software engineering, backend systems, and full-stack development.</p>
-                <p>My core strengths lie in data structures, algorithms, object-oriented programming, and problem solving. I enjoy building practical applications that involve API design, performance optimization, and debugging complex issues.</p>
-                <p>I have hands-on experience developing backend services, automation systems, and data-driven applications using Java, Python, JavaScript, Node.js, and MongoDB. Alongside development, I actively practice competitive programming to strengthen my fundamentals and write efficient, scalable code.</p>
-                <p>I am currently seeking software engineering internship or entry-level opportunities where I can learn from experienced engineers and contribute to meaningful real-world systems.</p>
-            </div>
+            <h2>About Me</h2>
+            <p>I am a B.Tech Computer Science student (2023–2026) with a strong interest in software engineering, backend systems, and full-stack development.</p>
+            <p>My core strengths lie in data structures, algorithms, object-oriented programming, and problem solving. I enjoy building practical applications that involve API design, performance optimization, and debugging complex issues.</p>
+            <p>I have hands-on experience developing backend services, automation systems, and data-driven applications using Java, Python, JavaScript, Node.js, and MongoDB. Alongside development, I actively practice competitive programming to strengthen my fundamentals and write efficient, scalable code.</p>
+            <p>I am currently seeking software engineering internship or entry-level opportunities where I can learn from experienced engineers and contribute to meaningful real-world systems.</p>
             <div class="highlights">
                 <div class="highlight-card reveal">
                     <h3>Education</h3>
-                    <p>B.Tech Computer Science (2023â€“2026)</p>
+                    <p>B.Tech Computer Science (2023–2026)</p>
                 </div>
                 <div class="highlight-card reveal">
                     <h3>Backend Focus</h3>
@@ -1096,7 +1087,7 @@
                 <button class="filter-btn" data-filter="backend">Backend</button>
                 <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
                 <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button> <!-- Added for your Instastrategix project -->
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
             </div>
             <div class="projects-grid">
 
@@ -1176,22 +1167,13 @@
                             <p>Modern and responsive digital marketing agency website</p>
                         </div>
                     </div>
-
-                    <h3>Instastrategix â€“ Digital Marketing Agency Website</h3>
-
-                    <p>
-                        Developed a responsive and modern website for Instastrategix, a digital
-                        marketing agency. Implemented clean UI, smooth interactions, and structured
-                        layouts using pure frontend technologies to effectively showcase services,
-                        branding, and agency presence.
-                    </p>
-
+                    <h3>Instastrategix – Digital Marketing Agency Website</h3>
+                    <p>Developed a responsive and modern website for Instastrategix, a digital marketing agency. Implemented clean UI, smooth interactions, and structured layouts using pure frontend technologies to effectively showcase services, branding, and agency presence.</p>
                     <div class="tech-stack">
                         <span class="tech-badge">HTML</span>
                         <span class="tech-badge">CSS</span>
                         <span class="tech-badge">JavaScript</span>
                     </div>
-
                     <div class="project-links">
                         <a href="#" class="project-btn">Live Demo</a>
                     </div>
@@ -1206,42 +1188,40 @@
             <h2>Competitive Programming & Achievements</h2>
             <div class="achievements-grid">
                 <div class="achievement-card reveal">
-                    <span class="icon">ðŸ†</span>
+                    <span class="icon">🏆</span>
                     <span class="counter" data-count="300">0</span><span style="font-size:2rem;font-weight:900;color:var(--primary-blue);">+</span>
                     <p>Algorithmic problems solved on LeetCode (Java-focused)</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">ðŸ‘¨â€ðŸ’»</span>
+                    <span class="icon">👨‍💻</span>
                     <p>Strong command over arrays, strings, recursion, trees, graphs, and dynamic programming</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">ðŸ”</span>
+                    <span class="icon">🔍</span>
                     <p>Regular practice of Google-tagged problems</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">ðŸ“ˆ</span>
+                    <span class="icon">📈</span>
                     <span class="counter" data-count="90">0</span><span style="font-size:2rem;font-weight:900;color:var(--primary-blue);">%</span>
                     <p>Acceptance rate with consistent problem-solving discipline</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">ðŸ“</span>
+                    <span class="icon">📝</span>
                     <p>HackerRank Python (Basic) Certification</p>
-                    <a href="python_basic certificater.pdf" download class="project-btn" style="margin-top:12px; display:inline-block;">View Certificate</a>
+                    <a href="python_basic certificate.pdf" download class="project-btn" style="margin-top:12px; display:inline-block;">View Certificate</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Placeholder sections so navigation links work -->
     <section id="experience">
         <div class="container">
-            <h2>Experience</h2>
-            <h3>TECHNICAL AUTOMATION & WEB DEVELOPER</h3>
-            <p>Finstocks Education</p>
-            <p>.Built Python/JavaScript automation scripts and dashboards, reducing manual effort by 30%
-                .Developed and maintained WordPress websites with custom themes, plugins, and API integrations
-                .Optimized workflows and reporting pipelines for performance and scalability
-            </p>
+            <h2>Experience 🏢</h2>
+            <h3>🛠️ Technical Automation & Web Developer</h3>
+            <p>📍 Finstocks Education</p>
+            <p>🔧 Built Python/JavaScript automation scripts and dashboards, reducing manual effort by 30%</p>
+            <p>🌐 Developed and maintained WordPress websites with custom themes, plugins, and API integrations</p>
+            <p>⚡ Optimized workflows and reporting pipelines for performance and scalability</p>
         </div>
     </section>
 
@@ -1265,32 +1245,32 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="mailto:abhishekchoubey312@gmail.com" aria-label="Email">âœ‰ï¸</a>
-                    <a href="https://github.com/choubey-abhishek" aria-label="GitHub">ðŸ™</a>
-                    <a href="https://linkedin.com/in/abhishek-choubey" aria-label="LinkedIn">ðŸ’¼</a>
-                    <a href="https://leetcode.com/u/choubey-abhishek" aria-label="LeetCode">ðŸ’»</a>
+                    <a href="mailto:abhishekchoubey312@gmail.com" aria-label="Email">✉️</a>
+                    <a href="https://github.com/choubey-abhishek" aria-label="GitHub">🐱</a>
+                    <a href="https://linkedin.com/in/abhishek-choubey" aria-label="LinkedIn">💼</a>
+                    <a href="https://leetcode.com/u/choubey-abhishek" aria-label="LeetCode">💻</a>
                 </div>
                 <div class="copyright">
-                    Â© 2026 Abhishek Choubey
+                    © 2026 Abhishek Choubey
                 </div>
-                <a href="#" class="back-to-top">â†‘ Back to Top</a>
+                <a href="#" class="back-to-top">↑ Back to Top</a>
             </div>
         </div>
     </footer>
     <!-- Chatbot -->
     <div id="chatbot">
-        <button id="chat-toggle-btn">ðŸ’¬</button>
+        <button id="chat-toggle-btn">💬</button>
         <div id="chat-window">
             <div class="chat-header">
                 <div>Abhishek's Assistant</div>
-                <button id="chat-close-btn">Ã—</button>
+                <button id="chat-close-btn">×</button>
             </div>
             <div id="chat-messages" class="chat-messages">
-                <div class="message bot">Hey! ðŸ‘‹ I'm your personal portfolio assistant.<br>Ask me about my skills, projects, education, competitive programming or how to contact me!</div>
+                <div class="message bot">Hey! 👋 I'm your personal portfolio assistant.<br>Ask me about my skills, projects, education, competitive programming or how to contact me!</div>
             </div>
             <div class="chat-input-area">
                 <input id="chat-input" type="text" placeholder="Type your message...">
-                <button id="chat-send-btn">âž¤</button>
+                <button id="chat-send-btn">➤</button>
             </div>
         </div>
     </div>
@@ -1300,20 +1280,20 @@
         const body = document.body;
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            themeToggle.textContent = body.classList.contains('dark-mode') ? 'â˜€ï¸' : 'ðŸŒ™';
+            themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
-        // Hamburger menu - improved
+        // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? 'âœ•' : 'â˜°';
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
-        // Close menu when clicking a link
+        // Close menu on link click
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                hamburger.textContent = 'â˜°';
+                hamburger.textContent = '☰';
             });
         });
         // Progress bar + active nav link
@@ -1346,7 +1326,7 @@
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
-        // Project filter - FIXED display bug
+        // Project filter (fixed display bug – grid now properly reflows)
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         filterBtns.forEach(btn => {
@@ -1356,8 +1336,7 @@
                 const filter = btn.dataset.filter;
                 projectCards.forEach(card => {
                     const match = filter === 'all' || card.dataset.category === filter;
-                    card.style.display = match ? '' : 'none'; // Fixed: '' restores grid layout
-                    card.classList.toggle('visible', match);
+                    card.style.display = match ? '' : 'none';
                 });
             });
         });
@@ -1427,14 +1406,14 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
         const replies = {
-            default: "Hmm... ask me about my skills, projects, education, LeetCode stats, or how to contact me! ðŸ˜Š",
-            greeting: ["Hey there!", "Hi! ðŸ‘‹", "Hello! Ready to talk about code?"],
-            skills: "My main skills include:\nâ€¢ Java (primary)\nâ€¢ Node.js, Express, MongoDB\nâ€¢ Data Structures & Algorithms\nâ€¢ RESTful APIs\nâ€¢ Python, JavaScript, C++\nWant more details?",
+            default: "Hmm... ask me about my skills, projects, education, LeetCode stats, or how to contact me! 😊",
+            greeting: ["Hey there!", "Hi! 👋", "Hello! Ready to talk about code?"],
+            skills: "My main skills include:\n• Java (primary)\n• Node.js, Express, MongoDB\n• Data Structures & Algorithms\n• RESTful APIs\n• Python, JavaScript, C++\nWant more details?",
             projects: "I've built:\n1. Scalable URL Shortener (Node.js + MongoDB)\n2. Real-Time Typing Speed Tester\n3. Full-Stack Educational Platform (MERN)\nWhich one interests you?",
-            education: "I'm currently pursuing B.Tech in Computer Science (2023â€“2026).",
+            education: "I'm currently pursuing B.Tech in Computer Science (2023–2026).",
             dsa: "I've solved 300+ DSA problems on LeetCode (mostly Java). Strong in arrays, strings, trees, graphs, DP.",
-            contact: "You can reach me at:\nðŸ“§ abhishekchoubey312@gmail.com\nGitHub: choubey-abhishek\nLinkedIn: abhishek-choubey\nLeetCode: choubey-abhishek",
-            competitive: "I'm active in competitive programming.\nâ€¢ 300+ LeetCode problems\nâ€¢ HackerRank Python (Basic) certified\nâ€¢ Regular practice on Google-tagged problems"
+            contact: "You can reach me at:\n📧 abhishekchoubey312@gmail.com\nGitHub: choubey-abhishek\nLinkedIn: abhishek-choubey\nLeetCode: choubey-abhishek",
+            competitive: "I'm active in competitive programming.\n• 300+ LeetCode problems\n• HackerRank Python (Basic) certified\n• Regular practice on Google-tagged problems"
         };
         function getReply(message) {
             const text = message.toLowerCase().trim();
