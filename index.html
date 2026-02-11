@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abhishek Choubey - Software Engineer | Backend & Full-Stack Developer">
+    <meta name="description" content="Abhishek Choubey - Backend Engineer | Data Structures • Algorithms • Scalable Systems">
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#4285F4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="manifest" href="/manifest.json">
-    <!-- Icons (you need to create these PNG files in root) -->
+    <!-- Icons -->
     <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192">
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-    <title>Abhishek Choubey - Software Engineer</title>
-    <!-- Preconnect for faster font loading -->
+    <title>Abhishek Choubey - Backend Engineer</title>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Optimized font loading: only necessary weights -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap">
     <style>
@@ -43,7 +42,7 @@
             --card-shadow: 0 10px 30px rgba(0,0,0,0.35);
             --subtle-gradient: linear-gradient(135deg, rgba(66,133,244,0.06) 0%, rgba(244,180,0,0.06) 100%);
         }
-        /* Global Body – Mobile-First Base */
+        /* Global Body */
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -57,9 +56,9 @@
             transition: background-color 0.4s, color 0.4s;
             min-height: 100vh;
             position: relative;
-            font-size: 16px; /* Base font size for readability */
+            font-size: 16px;
         }
-        /* Subtle floating dots – optimized */
+        /* Subtle floating dots */
         body::before {
             content: '';
             position: absolute;
@@ -80,9 +79,9 @@
         body.dark-mode::before { opacity: 0.04; }
         body.loaded::before { animation: none; }
         h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 700; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; } /* Mobile padding */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
 
-        /* Modern Glassmorphism Header + Navbar – Mobile-First */
+        /* Header & Navbar */
         header {
             position: fixed;
             top: 0;
@@ -99,7 +98,7 @@
             background: rgba(15, 15, 15, 0.82);
             backdrop-filter: blur(16px) saturate(160%);
             border-bottom: 1px solid rgba(66, 133, 244, 0.20);
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, , 0.45);
         }
         nav {
             display: flex;
@@ -241,12 +240,11 @@
             color: var(--text-color);
         }
 
-        /* Modern Cards – Mobile-First */
+        /* Cards */
         .highlight-card,
         .skill-card,
         .project-card,
-        .achievement-card,
-        .experience-card {
+        .achievement-card {
             background: var(--accent-background);
             border-radius: 20px;
             padding: 24px 20px;
@@ -260,8 +258,7 @@
         body.dark-mode .highlight-card,
         body.dark-mode .skill-card,
         body.dark-mode .project-card,
-        body.dark-mode .achievement-card,
-        body.dark-mode .experience-card {
+        body.dark-mode .achievement-card {
             background: linear-gradient(145deg, #1a1a1a, #222);
             border: 1px solid rgba(66,133,244,0.15);
             box-shadow: 0 10px 30px rgba(0,0,0,0.35);
@@ -269,13 +266,13 @@
         .highlight-card:hover,
         .skill-card:hover,
         .project-card:hover,
-        .achievement-card:hover,
-        .experience-card:hover {
+        .achievement-card:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: 0 20px 40px rgba(66,133,244,0.18);
             border-color: rgba(66,133,244,0.25);
         }
-        /* Entrance animation – staggered */
+
+        /* Reveal animation */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -285,14 +282,11 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Staggered delays */
         .highlights .reveal:nth-child(1) { transition-delay: 0.1s; }
         .highlights .reveal:nth-child(2) { transition-delay: 0.2s; }
         .highlights .reveal:nth-child(3) { transition-delay: 0.3s; }
-        .skills-grid .reveal:nth-child(1) { transition-delay: 0.1s; }
-        .skills-grid .reveal:nth-child(2) { transition-delay: 0.25s; }
-        .skills-grid .reveal:nth-child(3) { transition-delay: 0.4s; }
-        .skills-grid .reveal:nth-child(4) { transition-delay: 0.55s; }
+        .highlights .reveal:nth-child(4) { transition-delay: 0.4s; }
+
         /* Skill card */
         .skill-card h3 {
             font-size: 1.45rem;
@@ -338,7 +332,8 @@
         .skill-card li:hover::before {
             transform: translateX(8px);
         }
-        /* Project card – Mobile-First */
+
+        /* Project card */
         .project-card .image-wrapper {
             border-radius: 20px 20px 0 0;
             overflow: hidden;
@@ -369,36 +364,14 @@
             padding: 28px 24px;
             color: white;
         }
-        .project-card:hover .overlay {
-            opacity: 1;
-        }
+        .project-card:hover .overlay { opacity: 1; }
         .project-card .overlay p {
             margin: 0 0 12px 0;
             font-size: 1.05rem;
             opacity: 0.9;
         }
-        /* Achievement card – Mobile-First */
-        .achievement-card {
-            text-align: center;
-            padding: 32px 20px;
-        }
-        .achievement-card .icon {
-            font-size: 3rem;
-            margin-bottom: 24px;
-        }
-        .achievement-card .counter {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary-blue);
-            line-height: 1;
-            margin: 16px 0 12px;
-        }
-        .achievement-card p {
-            font-size: 1.1rem;
-            opacity: 0.92;
-        }
 
-        /* Rest of styles – Mobile-First */
+        /* Hero */
         #hero {
             position: relative;
             min-height: 80vh;
@@ -424,7 +397,6 @@
             transform: translate(-50%, -75%);
             will-change: transform;
             backface-visibility: hidden;
-            transform: translate(-50%, -75%) translateZ(0);
         }
         #hero .wave span:nth-child(1) {
             border-radius: 45%;
@@ -498,7 +470,6 @@
             background: rgba(255,255,255,0.2);
             padding: 16px;
             border-radius: 16px;
-            min-width: auto;
             transition: all 0.5s ease;
             border: 1px solid rgba(255,255,255,0.2);
         }
@@ -519,10 +490,9 @@
             font-weight: 600;
             color: #fff;
         }
-        section {
-            padding: 60px 0;
-            position: relative;
-        }
+
+        /* Sections */
+        section { padding: 60px 0; position: relative; }
         section h2 {
             text-align: center;
             font-size: 2.1rem;
@@ -540,17 +510,10 @@
             transform: translateX(-50%);
             border-radius: 3px;
         }
-        .highlights {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
+        .highlights { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 50px; }
+        .skills-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .projects-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .achievements-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
         .project-filters {
             display: flex;
             justify-content: center;
@@ -578,19 +541,6 @@
             background: var(--primary-blue);
             color: var(--white);
             box-shadow: var(--glow);
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin: 16px 0 10px;
-        }
-        .project-card p {
-            font-size: 1rem;
-            margin-bottom: 16px;
         }
         .tech-stack {
             margin: 16px 0;
@@ -627,12 +577,8 @@
             transform: translateY(-5px);
             box-shadow: var(--glow);
         }
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        /* Footer – Mobile-First */
+
+        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
             color: #fff;
@@ -713,140 +659,7 @@
             opacity: 1;
             transform: translateY(-4px);
         }
-        /* Chatbot styles – Mobile-First */
-        #chatbot {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 1000;
-        }
-        #chat-toggle-btn {
-            width: 64px;
-            height: 64px;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 32px;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(66,133,244,0.45);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #chat-toggle-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(66,133,244,0.55);
-        }
-        #chat-window {
-            display: none;
-            flex-direction: column;
-            width: calc(100vw - 30px);
-            height: 80vh;
-            background: var(--background);
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.28);
-            position: absolute;
-            bottom: 90px;
-            right: 0;
-            overflow: hidden;
-        }
-        #chat-window.open {
-            display: flex;
-        }
-        .chat-header {
-            background: var(--primary-blue);
-            color: white;
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-        #chat-close-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            padding: 0 8px;
-        }
-        #chat-close-btn:hover {
-            opacity: 0.8;
-        }
-        #chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            background: var(--background);
-        }
-        .message {
-            max-width: 82%;
-            padding: 12px 18px;
-            border-radius: 20px;
-            font-size: 15px;
-            line-height: 1.5;
-            word-wrap: break-word;
-        }
-        .message.user {
-            align-self: flex-end;
-            background: var(--primary-blue);
-            color: white;
-            border-bottom-right-radius: 6px;
-        }
-        .message.bot {
-            align-self: flex-start;
-            background: var(--accent-background);
-            color: var(--text-color);
-            border-bottom-left-radius: 6px;
-        }
-        .chat-input-area {
-            display: flex;
-            padding: 16px;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            gap: 10px;
-            background: var(--background);
-        }
-        #chat-input {
-            flex: 1;
-            padding: 14px 18px;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 999px;
-            font-size: 15px;
-            background: var(--accent-background);
-            color: var(--text-color);
-            outline: none;
-        }
-        #chat-input:focus {
-            border-color: var(--primary-blue);
-        }
-        #chat-send-btn {
-            width: 52px;
-            height: 52px;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 22px;
-            transition: all 0.25s;
-        }
-        #chat-send-btn:hover {
-            transform: scale(1.08);
-        }
-        body.dark-mode .message.bot {
-            background: #222;
-        }
-        body.dark-mode .chat-input-area {
-            border-top-color: #333;
-        }
-        body.dark-mode #chat-input {
-            border-color: #444;
-        }
+
         /* Progress bar */
         #progress-bar {
             position: fixed;
@@ -858,6 +671,7 @@
             z-index: 9999;
             transition: width 0.2s ease;
         }
+
         /* Reduced Motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -866,13 +680,11 @@
                 transition-duration: 0s !important;
             }
         }
-        /* Tablet and Desktop Enhancements */
+
+        /* Desktop */
         @media (min-width: 769px) {
             .container { padding: 0 20px; }
-            nav {
-                padding: 20px 0;
-                gap: 48px;
-            }
+            nav { padding: 20px 0; gap: 48px; }
             .logo { font-size: 1.75rem; }
             .nav-links {
                 display: flex;
@@ -882,29 +694,14 @@
                 backdrop-filter: none;
                 padding: 0;
                 box-shadow: none;
-                border-radius: 0;
                 gap: 36px;
-                align-items: initial;
-                text-align: initial;
             }
-            .nav-links li a {
-                font-size: 1.02rem;
-                padding: 6px 4px;
-                width: auto;
-            }
+            .nav-links li a { font-size: 1.02rem; padding: 6px 4px; width: auto; }
             .nav-actions { gap: 16px; }
-            .action-btn {
-                padding: 10px 24px;
-                font-size: 0.97rem;
-            }
+            .action-btn { padding: 10px 24px; font-size: 0.97rem; }
             .theme-toggle { font-size: 1.6rem; }
             .hamburger { display: none; }
-            /* Hero */
-            #hero {
-                min-height: 100vh;
-                padding: 100px 0 60px;
-            }
-            #hero .hero-content { padding: 0 20px; }
+            #hero { min-height: 100vh; padding: 100px 0 60px; }
             #hero h1 { font-size: 3rem; }
             #hero p { font-size: 1.2rem; }
             .cta-buttons { flex-direction: row; gap: 20px; }
@@ -912,43 +709,12 @@
             .stats { flex-direction: row; gap: 36px; }
             .stat { padding: 20px 24px; min-width: 170px; }
             .stat span { font-size: 2.6rem; }
-            .stat-desc { font-size: 1.05rem; }
-            #hero .wave span {
-                width: 200vh;
-                height: 200vh;
-            }
-            /* Sections */
             section { padding: 90px 0; }
             section h2 { font-size: 2.6rem; }
-            .highlights {
+            .highlights, .skills-grid, .projects-grid, .achievements-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            }
-            .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-            .achievements-grid {
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            }
-            /* Cards */
-            .highlight-card, .skill-card, .project-card, .achievement-card {
-                padding: 28px 24px;
-            }
             .project-card .image-wrapper { height: 220px; }
-            .achievement-card { padding: 40px 28px; }
-            .achievement-card .icon { font-size: 3.5rem; }
-            .achievement-card .counter { font-size: 3.8rem; }
-            .skill-card li {
-                padding: 12px 0 12px 36px;
-                font-size: 1.02rem;
-            }
-            /* Footer */
-            .footer-links { gap: 24px; font-size: 0.98rem; }
-            .footer-social a { width: 48px; height: 48px; font-size: 1.4rem; }
-            /* Chatbot */
-            #chat-window { width: 360px; height: 520px; }
         }
     </style>
 </head>
@@ -978,6 +744,7 @@
             </nav>
         </div>
     </header>
+
     <section id="hero">
         <div class="wave">
             <span></span>
@@ -985,57 +752,66 @@
             <span></span>
         </div>
         <div class="hero-content container">
-            <h1>Software Engineer | Backend & Full-Stack</h1>
-            <p>I’m Abhishek Choubey, a CS undergraduate passionate about building scalable systems and writing clean, efficient code</p>
+            <h1>Abhishek Choubey<br>Backend Engineer | Data Structures • Algorithms • Scalable Systems</h1>
+            <p>I design and build backend systems that emphasize performance, clean architecture, and efficient data flow.</p>
             <div class="cta-buttons">
                 <a href="#projects" class="cta-btn">View Projects</a>
-                <a href="https://github.com/choubey-abhishek" class="cta-btn">GitHub Profile</a>
+                <a href="https://github.com/choubey-abhishek" class="cta-btn">GitHub</a>
+                <a href="https://leetcode.com/u/choubey-abhishek/" class="cta-btn">LeetCode</a>
+                <a href="https://codeforces.com/profile/Abhishekchoubey" class="cta-btn">Codeforces</a>
             </div>
             <div class="stats">
                 <div class="stat">
                     <span>300+</span>
-                    <div class="stat-desc">DSA Problems Solved<br>(LeetCode – Java)</div>
+                    <div class="stat-desc">DSA Problems Solved</div>
                 </div>
                 <div class="stat">
                     <span>5+</span>
-                    <div class="stat-desc">Engineering Projects</div>
+                    <div class="stat-desc">Backend & Full-Stack Systems Built</div>
                 </div>
                 <div class="stat">
-                    <span>Backend-Focused</span>
-                    <div class="stat-desc">Developer</div>
+                    <span>30%</span>
+                    <div class="stat-desc">Workflow Efficiency Improvement</div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I am a B.Tech Computer Science student (2023–2026) with a strong interest in software engineering, backend systems, and full-stack development.</p>
-            <p>My core strengths lie in data structures, algorithms, object-oriented programming, and problem solving. I enjoy building practical applications that involve API design, performance optimization, and debugging complex issues.</p>
-            <p>I have hands-on experience developing backend services, automation systems, and data-driven applications using Java, Python, JavaScript, Node.js, and MongoDB. Alongside development, I actively practice competitive programming to strengthen my fundamentals and write efficient, scalable code.</p>
-            <p>I am currently seeking software engineering internship or entry-level opportunities where I can learn from experienced engineers and contribute to meaningful real-world systems.</p>
+            <p>Computer Science undergraduate (2023–2026) focused on backend engineering, system design fundamentals, and algorithmic problem solving.</p>
+            <p>My engineering approach prioritizes scalable service design, performance-aware implementation, modular architecture, and strong data structure foundations.</p>
+            <p>I build RESTful services, automation systems, and data-driven applications using Java, Python, Node.js, and MongoDB. My technical decisions are guided by complexity analysis, memory efficiency, and maintainability.</p>
+            <p>Solved 300+ algorithmic problems with emphasis on trees, graphs, dynamic programming, and optimization techniques.</p>
+            <p>Currently strengthening knowledge in database indexing, caching strategies, backend scalability patterns, and distributed system fundamentals.</p>
             <div class="highlights">
                 <div class="highlight-card reveal">
-                    <h3>Education</h3>
-                    <p>B.Tech Computer Science (2023–2026)</p>
+                    <h3>300+ DSA Problems</h3>
+                    <p>Solved on LeetCode (Java-focused)</p>
                 </div>
                 <div class="highlight-card reveal">
-                    <h3>Backend Focus</h3>
-                    <p>API Design & Optimization</p>
+                    <h3>5+ Systems Built</h3>
+                    <p>Backend and full-stack projects</p>
                 </div>
                 <div class="highlight-card reveal">
-                    <h3>DSA Strength</h3>
-                    <p>300+ Problems Solved</p>
+                    <h3>30% Efficiency Gain</h3>
+                    <p>Through automation pipelines</p>
+                </div>
+                <div class="highlight-card reveal">
+                    <h3>Strong CS Foundation</h3>
+                    <p>OS, DBMS, OOP, Computer Networks</p>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="skills">
         <div class="container">
-            <h2>Skills</h2>
+            <h2>Technical Stack</h2>
             <div class="skills-grid">
                 <div class="skill-card reveal">
-                    <h3>Programming Languages</h3>
+                    <h3>Languages</h3>
                     <ul>
                         <li>Java (Primary)</li>
                         <li>C++</li>
@@ -1044,35 +820,31 @@
                     </ul>
                 </div>
                 <div class="skill-card reveal">
-                    <h3>Backend & Web Development</h3>
+                    <h3>Backend & Data</h3>
                     <ul>
                         <li>Node.js</li>
                         <li>Express.js</li>
-                        <li>RESTful APIs</li>
+                        <li>REST APIs</li>
                         <li>MongoDB</li>
-                        <li>HTML, CSS</li>
                     </ul>
                 </div>
                 <div class="skill-card reveal">
                     <h3>Core Computer Science</h3>
                     <ul>
                         <li>Data Structures & Algorithms</li>
-                        <li>Object-Oriented Programming</li>
+                        <li>Object-Oriented Design</li>
                         <li>Operating Systems</li>
                         <li>DBMS</li>
                         <li>Computer Networks</li>
-                        <li>Debugging & Problem Solving</li>
                     </ul>
                 </div>
                 <div class="skill-card reveal">
-                    <h3>Tools & Engineering Practices</h3>
+                    <h3>Engineering Practices</h3>
                     <ul>
                         <li>Git & GitHub</li>
-                        <li>VS Code</li>
-                        <li>Postman</li>
-                        <li>Unit Testing</li>
+                        <li>Debugging</li>
+                        <li>API Testing (Postman)</li>
                         <li>Performance Optimization</li>
-                        <li>Agile Fundamentals</li>
                     </ul>
                 </div>
             </div>
@@ -1081,7 +853,7 @@
 
     <section id="projects">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>Selected Projects</h2>
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="backend">Backend</button>
@@ -1090,7 +862,6 @@
                 <button class="filter-btn" data-filter="frontend">Frontend</button>
             </div>
             <div class="projects-grid">
-
                 <div class="project-card reveal" data-category="backend">
                     <div class="image-wrapper">
                         <video width="100%" autoplay loop muted playsinline>
@@ -1098,11 +869,11 @@
                             Your browser does not support the video tag.
                         </video>
                         <div class="overlay">
-                            <p>High-performance URL shortener with Base62 encoding and caching</p>
+                            <p>High-performance URL shortener with Base62 encoding, optimized lookups, and scalability</p>
                         </div>
                     </div>
                     <h3>Scalable URL Shortener Service</h3>
-                    <p>Designed and implemented a high-performance URL shortening backend. Used Base62 encoding for unique ID generation with collision handling. Achieved low-latency redirection using indexing, caching, and rate limiting.</p>
+                    <p>Designed and implemented a high-performance URL shortening backend with focus on low-latency redirection and extensibility. Implemented Base62 encoding with collision handling, indexed MongoDB schema for optimized lookups, modular service layers for scalability, evaluated time–space trade-offs for ID generation, and incorporated rate limiting and caching considerations.</p>
                     <div class="tech-stack">
                         <span class="tech-badge">Node.js</span>
                         <span class="tech-badge">Express</span>
@@ -1112,16 +883,31 @@
                         <a href="https://github.com/choubey-abhishek/url-shortener" class="project-btn">GitHub</a>
                     </div>
                 </div>
-
+                <div class="project-card reveal" data-category="backend">
+                    <div class="image-wrapper">
+                        <img data-src="https://via.placeholder.com/800x450?text=Automation+%26+Analytics+System" alt="Automation & Analytics System" loading="lazy">
+                        <div class="overlay">
+                            <p>Automation pipelines and analytics dashboards for operational efficiency</p>
+                        </div>
+                    </div>
+                    <h3>Automation & Analytics System — Finstocks Education</h3>
+                    <p>Built Python and JavaScript automation pipelines reducing manual effort by 30%. Designed internal dashboards for operational analytics, integrated APIs for structured data flow, and optimized backend logic to improve throughput.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">API Integration</span>
+                    </div>
+                    <div class="project-links"></div>
+                </div>
                 <div class="project-card reveal" data-category="javascript">
                     <div class="image-wrapper">
                         <img data-src="Speed testing.png" alt="Typing Speed Tester" loading="lazy">
                         <div class="overlay">
-                            <p>Real-time WPM tracker with analytics dashboard</p>
+                            <p>Real-time WPM tracker with optimized performance and analytics</p>
                         </div>
                     </div>
-                    <h3>Real-Time Typing Speed Tester & Analytics Dashboard</h3>
-                    <p>Built a responsive web application calculating real-time WPM and accuracy. Reduced input-processing latency by 45% through algorithmic optimization.</p>
+                    <h3>Real-Time Typing Speed Analyzer</h3>
+                    <p>Engineered event-driven input processing for a real-time typing speed analyzer. Reduced processing latency by 45% through algorithmic optimization and implemented real-time analytics and accuracy tracking.</p>
                     <div class="tech-stack">
                         <span class="tech-badge">JavaScript</span>
                         <span class="tech-badge">HTML</span>
@@ -1133,7 +919,6 @@
                         <a href="https://choubey-abhishek.github.io/Typing-Speed-Master" class="project-btn">Live</a>
                     </div>
                 </div>
-
                 <div class="project-card reveal" data-category="full-stack">
                     <div class="image-wrapper">
                         <video width="100%" autoplay loop muted playsinline>
@@ -1156,7 +941,6 @@
                         <a href="#" class="project-btn">GitHub</a>
                     </div>
                 </div>
-
                 <div class="project-card reveal" data-category="frontend">
                     <div class="image-wrapper">
                         <video width="100%" autoplay loop muted playsinline>
@@ -1178,32 +962,30 @@
                         <a href="https://choubey-abhishek.github.io/Instastrategix" class="project-btn">Live</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section id="competitive">
         <div class="container">
-            <h2>Competitive Programming & Achievements</h2>
+            <h2>Competitive Programming</h2>
             <div class="achievements-grid">
                 <div class="achievement-card reveal">
                     <span class="icon">🏆</span>
                     <span class="counter" data-count="300">0</span><span style="font-size:2rem;font-weight:900;color:var(--primary-blue);">+</span>
-                    <p>Algorithmic problems solved on LeetCode (Java-focused)</p>
+                    <p>Algorithmic problems solved (Java-focused)</p>
                 </div>
                 <div class="achievement-card reveal">
                     <span class="icon">👨‍💻</span>
-                    <p>Strong command over arrays, strings, recursion, trees, graphs, and dynamic programming</p>
+                    <p>Strong command over arrays, recursion, trees, graphs, greedy, and dynamic programming</p>
                 </div>
                 <div class="achievement-card reveal">
                     <span class="icon">🔍</span>
-                    <p>Regular practice of Google-tagged problems</p>
+                    <p>Comfortable analyzing formal time and space complexity</p>
                 </div>
                 <div class="achievement-card reveal">
-                    <span class="icon">📈</span>
-                    <span class="counter" data-count="90">0</span><span style="font-size:2rem;font-weight:900;color:var(--primary-blue);">%</span>
-                    <p>Acceptance rate with consistent problem-solving discipline</p>
+                    <span class="icon">🌐</span>
+                    <p>Active on LeetCode, Codeforces, and HackerRank</p>
                 </div>
                 <div class="achievement-card reveal">
                     <span class="icon">📝</span>
@@ -1219,17 +1001,29 @@
             <h2>Experience 🏢</h2>
             <h3>🛠️ Technical Automation & Web Developer</h3>
             <p>📍 Finstocks Education</p>
-            <p>🔧 Built Python/JavaScript automation scripts and dashboards, reducing manual effort by 30%</p>
-            <p>🌐 Developed and maintained WordPress websites with custom themes, plugins, and API integrations</p>
-            <p>⚡ Optimized workflows and reporting pipelines for performance and scalability</p>
+            <ul style="padding-left: 20px; line-height: 1.8;">
+                <li>Built Python and JavaScript automation pipelines reducing manual effort by 30%</li>
+                <li>Designed internal dashboards for operational analytics</li>
+                <li>Integrated APIs for structured data flow</li>
+                <li>Optimized backend logic to improve throughput</li>
+                <li>Developed and maintained WordPress websites with custom themes, plugins, and API integrations</li>
+                <li>Optimized workflows and reporting pipelines for performance and scalability</li>
+            </ul>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
             <h2>Contact</h2>
-            <p>Feel free to reach out via email or social links below.</p>
+            <p>Feel free to reach out via email or the platforms below.</p>
             <p>Email: <a href="mailto:abhishekchoubey312@gmail.com">abhishekchoubey312@gmail.com</a></p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="https://www.linkedin.com/in/abhishek-choubey-7a4b53146/" class="project-btn">LinkedIn</a>
+                <a href="https://github.com/choubey-abhishek" class="project-btn">GitHub</a>
+                <a href="https://leetcode.com/u/choubey-abhishek/" class="project-btn">LeetCode</a>
+                <a href="https://codeforces.com/profile/Abhishekchoubey" class="project-btn">Codeforces</a>
+                <a href="https://www.hackerrank.com/profile/Abhishekchoube13" class="project-btn">HackerRank</a>
+            </div>
         </div>
     </section>
 
@@ -1247,8 +1041,9 @@
                 <div class="footer-social">
                     <a href="mailto:abhishekchoubey312@gmail.com" aria-label="Email">✉️</a>
                     <a href="https://github.com/choubey-abhishek" aria-label="GitHub">🐱</a>
-                    <a href="https://linkedin.com/in/abhishek-choubey" aria-label="LinkedIn">💼</a>
-                    <a href="https://leetcode.com/u/choubey-abhishek" aria-label="LeetCode">💻</a>
+                    <a href="https://www.linkedin.com/in/abhishek-choubey-tação7a4b53146/" aria-label="LinkedIn">💼</a>
+                    <a href="https://leetcode.com/u/choubey-abhishek/" aria-label="LeetCode">💻</a>
+                    <a href="https://codeforces.com/profile/Abhishekchoubey" aria-label="Codeforces">🏆</a>
                 </div>
                 <div class="copyright">
                     © 2026 Abhishek Choubey
@@ -1257,46 +1052,29 @@
             </div>
         </div>
     </footer>
-    <!-- Chatbot -->
-    <div id="chatbot">
-        <button id="chat-toggle-btn">💬</button>
-        <div id="chat-window">
-            <div class="chat-header">
-                <div>Abhishek's Assistant</div>
-                <button id="chat-close-btn">×</button>
-            </div>
-            <div id="chat-messages" class="chat-messages">
-                <div class="message bot">Hey! 👋 I'm your personal portfolio assistant.<br>Ask me about my skills, projects, education, competitive programming or how to contact me!</div>
-            </div>
-            <div class="chat-input-area">
-                <input id="chat-input" type="text" placeholder="Type your message...">
-                <button id="chat-send-btn">➤</button>
-            </div>
-        </div>
-    </div>
+
     <script>
-        // Theme toggle
         const themeToggle = document.querySelector('.theme-toggle');
         const body = document.body;
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
-        // Hamburger menu
+
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
-        // Close menu on link click
+
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 hamburger.textContent = '☰';
             });
         });
-        // Progress bar + active nav link
+
         const updateScroll = () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1326,7 +1104,7 @@
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
-        // Project filter (fixed display bug – grid now properly reflows)
+
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         filterBtns.forEach(btn => {
@@ -1341,7 +1119,7 @@
             });
         });
         document.querySelector('.filter-btn.active')?.click();
-        // Lazy load images
+
         const lazyImages = document.querySelectorAll('img[data-src]');
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
@@ -1358,7 +1136,7 @@
         } else {
             lazyImages.forEach(img => img.src = img.dataset.src);
         }
-        // Scroll reveal + counters
+
         const scrollElements = document.querySelectorAll('.reveal, .counter');
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1385,78 +1163,7 @@
             });
         }, { rootMargin: '-50px' });
         scrollElements.forEach(el => scrollObserver.observe(el));
-        // Chatbot logic
-        const chatToggleBtn = document.getElementById('chat-toggle-btn');
-        const chatWindow = document.getElementById('chat-window');
-        const chatCloseBtn = document.getElementById('chat-close-btn');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
-        const chatSendBtn = document.getElementById('chat-send-btn');
-        chatToggleBtn.addEventListener('click', () => {
-            chatWindow.classList.toggle('open');
-        });
-        chatCloseBtn.addEventListener('click', () => {
-            chatWindow.classList.remove('open');
-        });
-        function addMessage(text, isUser = false) {
-            const msg = document.createElement('div');
-            msg.className = `message ${isUser ? 'user' : 'bot'}`;
-            msg.textContent = text;
-            chatMessages.appendChild(msg);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-        const replies = {
-            default: "Hmm... ask me about my skills, projects, education, LeetCode stats, or how to contact me! 😊",
-            greeting: ["Hey there!", "Hi! 👋", "Hello! Ready to talk about code?"],
-            skills: "My main skills include:\n• Java (primary)\n• Node.js, Express, MongoDB\n• Data Structures & Algorithms\n• RESTful APIs\n• Python, JavaScript, C++\nWant more details?",
-            projects: "I've built:\n1. Scalable URL Shortener (Node.js + MongoDB)\n2. Real-Time Typing Speed Tester\n3. Full-Stack Educational Platform (MERN)\nWhich one interests you?",
-            education: "I'm currently pursuing B.Tech in Computer Science (2023–2026).",
-            dsa: "I've solved 300+ DSA problems on LeetCode (mostly Java). Strong in arrays, strings, trees, graphs, DP.",
-            contact: "You can reach me at:\n📧 abhishekchoubey312@gmail.com\nGitHub: choubey-abhishek\nLinkedIn: abhishek-choubey\nLeetCode: choubey-abhishek",
-            competitive: "I'm active in competitive programming.\n• 300+ LeetCode problems\n• HackerRank Python (Basic) certified\n• Regular practice on Google-tagged problems"
-        };
-        function getReply(message) {
-            const text = message.toLowerCase().trim();
-            if (text.includes('hi') || text.includes('hello') || text === 'hey') {
-                return replies.greeting[Math.floor(Math.random() * replies.greeting.length)];
-            }
-            if (text.includes('skill') || text.includes('tech stack') || text.includes('technologies')) {
-                return replies.skills;
-            }
-            if (text.includes('project') || text.includes('what have you built')) {
-                return replies.projects;
-            }
-            if (text.includes('education') || text.includes('study') || text.includes('college')) {
-                return replies.education;
-            }
-            if (text.includes('dsa') || text.includes('leetcode') || text.includes('problems solved')) {
-                return replies.dsa;
-            }
-            if (text.includes('contact') || text.includes('email') || text.includes('reach') || text.includes('linkedin')) {
-                return replies.contact;
-            }
-            if (text.includes('competitive') || text.includes('cp') || text.includes('hacker rank')) {
-                return replies.competitive;
-            }
-            return replies.default;
-        }
-        function sendMessage() {
-            const text = chatInput.value.trim();
-            if (!text) return;
-            addMessage(text, true);
-            chatInput.value = '';
-            setTimeout(() => {
-                addMessage(getReply(text));
-            }, 400);
-        }
-        chatSendBtn.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
-        // PWA Service Worker Registration
+
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
