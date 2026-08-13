@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Engineering Details – Abhishek Choubey</title>
+
+    <meta
+        name="description"
+        content="Technical project details, backend engineering work, DSA practice and computer science fundamentals of Abhishek Choubey."
+    >
+
+    <meta name="author" content="Abhishek Choubey">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-bg: rgba(37,99,235,0.08);
+            --gradient: linear-gradient(135deg,#2563eb,#1d4ed8);
+            --bg: #ffffff;
+            --bg-secondary: #f8fafc;
+            --card: #f1f5f9;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 6px 20px rgba(0,0,0,.06);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+
+        h1,h2,h3,h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 68px;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .logo-primary {
+            color: var(--primary);
+        }
+
+        .logo-secondary {
+            color: var(--text);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.15rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: .8rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: var(--gradient);
+            color: #fff;
+            padding: 5rem 0 4rem;
+        }
+
+        .hero-kicker {
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-size: .76rem;
+            opacity: .78;
+            margin-bottom: .8rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 1rem;
+            opacity: .88;
+        }
+
+        .section {
+            padding: 4.5rem 0;
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-lead {
+            max-width: 760px;
+            color: var(--muted);
+            margin-bottom: 1.8rem;
+        }
+
+        .project-detail {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.3rem;
+        }
+
+        .project-meta {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            font-size: .7rem;
+            font-weight: 700;
+            margin-bottom: .4rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.25rem;
+            margin-bottom: .7rem;
+        }
+
+        .project-detail > p {
+            color: var(--muted);
+            font-size: .87rem;
+        }
+
+        .columns {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-box {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: .75rem;
+            padding: 1rem;
+        }
+
+        .info-box h4 {
+            font-size: .85rem;
+            margin-bottom: .45rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box li {
+            position: relative;
+            padding-left: .9rem;
+            font-size: .79rem;
+            color: var(--muted);
+            margin-bottom: .35rem;
+        }
+
+        .info-box li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .tech {
+            margin-top: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: .78rem;
+        }
+
+        .experience-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+        }
+
+        .experience-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: .15rem;
+        }
+
+        .company {
+            color: var(--primary);
+            font-size: .82rem;
+            font-weight: 700;
+        }
+
+        .date {
+            font-size: .76rem;
+            color: var(--muted);
+            margin-bottom: .8rem;
+        }
+
+        .experience-card p {
+            color: var(--muted);
+            font-size: .85rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skill {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: .9rem;
+            padding: 1.15rem;
+            box-shadow: var(--shadow);
+        }
+
+        .skill h3 {
+            font-size: .95rem;
+            margin-bottom: .45rem;
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: .81rem;
+        }
+
+        .dsa-grid {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .dsa-card {
+            text-align: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: .9rem;
+            padding: 1.2rem;
+        }
+
+        .dsa-value {
+            color: var(--primary);
+            font-size: 1.9rem;
+            font-weight: 900;
+        }
+
+        .dsa-label {
+            color: var(--muted);
+            font-size: .78rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .tag {
+            padding: .3rem .65rem;
+            border-radius: 50px;
+            background: var(--primary-bg);
+            color: var(--primary);
+            font-size: .72rem;
+            font-weight: 600;
+        }
+
+        .links {
+            display: grid;
+            gap: .8rem;
+        }
+
+        .link-card {
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: .8rem;
+            box-shadow: var(--shadow);
+        }
+
+        .link-card strong {
+            font-size: .85rem;
+        }
+
+        .link-card span {
+            color: var(--muted);
+            font-size: .77rem;
+        }
+
+        footer {
+            background: var(--gradient);
+            color: #fff;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .footer-content a {
+            color: #fff;
+            text-decoration: none;
+            font-size: .8rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .columns {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .dsa-grid {
+                grid-template-columns: repeat(3,1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .links {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                gap: .65rem;
+            }
+
+            .nav-links a {
+                font-size: .7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <a href="index.html" class="logo">
+                <span class="logo-primary">Abhishek</span>
+                <span class="logo-secondary"> Choubey</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Main Portfolio</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#dsa">DSA</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-kicker">
+            Technical Portfolio
+        </div>
+
+        <h1>
+            Engineering Details
+        </h1>
+
+        <p>
+            Technical context behind my backend projects, professional
+            development work, computer science foundation and problem-solving
+            practice.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Projects -->
+
+<section id="projects" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Project Deep Dives
+        </h2>
+
+        <p class="section-lead">
+            These projects are selected because they provide useful engineering
+            discussion around APIs, state, data, architecture and application
+            behaviour.
+        </p>
+
+        <article class="project-detail" id="rate-limiter">
+
+            <div class="project-meta">
+                Backend · Distributed State
+            </div>
+
+            <h3>
+                Distributed Rate Limiter
+            </h3>
+
+            <p>
+                A backend service designed to control API request rates while
+                keeping rate-limit state available to multiple application
+                instances.
+            </p>
+
+            <div class="columns">
+
+                <div class="info-box">
+
+                    <h4>
+                        Implementation
+                    </h4>
+
+                    <ul>
+                        <li>Sliding-window strategy</li>
+                        <li>Token-bucket strategy</li>
+                        <li>Redis-backed shared state</li>
+                        <li>Express middleware</li>
+                        <li>Request validation</li>
+                    </ul>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>
+                        Engineering Focus
+                    </h4>
+
+                    <ul>
+                        <li>Shared state</li>
+                        <li>Rate-limit algorithms</li>
+                        <li>Burst handling</li>
+                        <li>API protection</li>
+                        <li>Trade-offs between strategies</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="tech">
+                Node.js · Express.js · Redis
+            </div>
+
+        </article>
+
+        <article class="project-detail" id="multi-agent">
+
+            <div class="project-meta">
+                Backend · Workflow Architecture
+            </div>
+
+            <h3>
+                Multi-Agent Workflow System
+            </h3>
+
+            <p>
+                Backend workflow system that separates planning, execution,
+                tool calls and validation into modular responsibilities.
+            </p>
+
+            <div class="columns">
+
+                <div class="info-box">
+
+                    <h4>
+                        Workflow
+                    </h4>
+
+                    <ul>
+                        <li>Task intake</li>
+                        <li>Planning</li>
+                        <li>Agent execution</li>
+                        <li>Tool calls</li>
+                        <li>Validation</li>
+                        <li>Result generation</li>
+                    </ul>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>
+                        Engineering Focus
+                    </h4>
+
+                    <ul>
+                        <li>Workflow orchestration</li>
+                        <li>State management</li>
+                        <li>Modular architecture</li>
+                        <li>API design</li>
+                        <li>Tool integration</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="tech">
+                Python · FastAPI · LangGraph
+            </div>
+
+        </article>
+
+        <article class="project-detail">
+
+            <div class="project-meta">
+                Full-Stack · Data
+            </div>
+
+            <h3>
+                Supply Chain Intelligence Platform
+            </h3>
+
+            <p>
+                Full-stack application focused on inventory, product data and
+                operational workflows.
+            </p>
+
+            <div class="columns">
+
+                <div class="info-box">
+
+                    <h4>
+                        Application
+                    </h4>
+
+                    <ul>
+                        <li>Inventory management</li>
+                        <li>Product data</li>
+                        <li>REST APIs</li>
+                        <li>MongoDB persistence</li>
+                        <li>React interface</li>
+                    </ul>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>
+                        Engineering Work
+                    </h4>
+
+                    <ul>
+                        <li>API structure</li>
+                        <li>Backend services</li>
+                        <li>MongoDB data models</li>
+                        <li>Frontend/backend integration</li>
+                        <li>Application workflows</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="tech">
+                Node.js · MongoDB · React
+            </div>
+
+        </article>
+
+        <article class="project-detail" id="educational-platform">
+
+            <div class="project-meta">
+                Full-Stack · Authentication
+            </div>
+
+            <h3>
+                Full-Stack Educational Platform
+            </h3>
+
+            <p>
+                Learning platform built around users, courses and learning
+                progress with separate frontend and backend responsibilities.
+            </p>
+
+            <div class="columns">
+
+                <div class="info-box">
+
+                    <h4>
+                        Features
+                    </h4>
+
+                    <ul>
+                        <li>User registration</li>
+                        <li>Login</li>
+                        <li>JWT authentication</li>
+                        <li>Authorisation</li>
+                        <li>Course management</li>
+                        <li>Progress tracking</li>
+                    </ul>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>
+                        Engineering Work
+                    </h4>
+
+                    <ul>
+                        <li>Authentication flow</li>
+                        <li>Express APIs</li>
+                        <li>MongoDB schemas</li>
+                        <li>Frontend/backend integration</li>
+                        <li>Application logic</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="tech">
+                MongoDB · Express.js · React · Node.js · JWT
+            </div>
+
+        </article>
+
+        <article class="project-detail">
+
+            <div class="project-meta">
+                Backend · API Design
+            </div>
+
+            <h3>
+                Scalable URL Shortener
+            </h3>
+
+            <p>
+                Backend service for creating short URLs and resolving them to
+                their original destinations.
+            </p>
+
+            <div class="columns">
+
+                <div class="info-box">
+
+                    <h4>
+                        Implementation
+                    </h4>
+
+                    <ul>
+                        <li>REST endpoints</li>
+                        <li>Short URL generation</li>
+                        <li>URL storage</li>
+                        <li>Redirect handling</li>
+                        <li>Input validation</li>
+                    </ul>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>
+                        Focus
+                    </h4>
+
+                    <ul>
+                        <li>Data modelling</li>
+                        <li>Lookup efficiency</li>
+                        <li>Error handling</li>
+                        <li>API structure</li>
+                        <li>Backend fundamentals</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="tech">
+                Node.js · Express.js · MongoDB
+            </div>
+
+        </article>
+
+        <article class="project-detail">
+
+            <div class="project-meta">
+                Frontend · Performance
+            </div>
+
+            <h3>
+                Real-Time Typing Speed Tester
+            </h3>
+
+            <p>
+                Web application that calculates typing speed and accuracy from
+                live keystroke input.
+            </p>
+
+            <div class="columns">
+
+                <div class="info-box">
+
+                    <h4>
+                        Functionality
+                    </h4>
+
+                    <ul>
+                        <li>Real-time WPM</li>
+                        <li>Accuracy calculation</li>
+                        <li>Keystroke tracking</li>
+                        <li>Live feedback</li>
+                    </ul>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>
+                        Performance
+                    </h4>
+
+                    <ul>
+                        <li>Input-processing optimisation</li>
+                        <li>Measured latency improvement</li>
+                        <li>Approximately 45% lower processing latency</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="tech">
+                JavaScript · HTML · CSS · Node.js
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- Experience -->
+
+<section id="experience" class="section section-alt">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Professional & Client Work
+        </h2>
+
+        <div class="experience-card">
+
+            <h3>
+                Technical Automation & Web Developer
+            </h3>
+
+            <div class="company">
+                Corporality Media
+            </div>
+
+            <div class="date">
+                February 2025 – Present
+            </div>
+
+            <p>
+                Work across production web applications, backend functionality,
+                API integrations, automation and deployment troubleshooting.
+            </p>
+
+            <p style="margin-top:.7rem;">
+                The work involves operating within existing systems, understanding
+                requirements and implementing changes without treating every
+                problem as a greenfield application.
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <h3>
+                Production Platform Work
+            </h3>
+
+            <div class="company">
+                Corporality Media & Brevix
+            </div>
+
+            <div class="date">
+                Professional development work
+            </div>
+
+            <p>
+                Contributions include web application functionality, API
+                integrations, analytics-related workflows, application logic,
+                automation and debugging.
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <h3>
+                Freelance Web Development
+            </h3>
+
+            <div class="company">
+                Client Projects
+            </div>
+
+            <div class="date">
+                Freelance development
+            </div>
+
+            <p>
+                Built business websites and web applications around client
+                requirements, including responsive frontend development,
+                custom functionality, integrations and production deployment.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Technical Stack -->
+
+<section id="skills" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Technical Stack
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>
+                    Languages
+                </h3>
+                <p>
+                    Java · JavaScript · Python · C++
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    Backend
+                </h3>
+                <p>
+                    Node.js · Express.js · FastAPI · REST APIs · JWT
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    Databases
+                </h3>
+                <p>
+                    MongoDB · Redis · Data modelling · CRUD · Caching concepts
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    Frontend
+                </h3>
+                <p>
+                    React · Next.js · HTML · CSS
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    Tools
+                </h3>
+                <p>
+                    Git · GitHub · Postman · VS Code · Vercel
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    Engineering Areas
+                </h3>
+                <p>
+                    API design · Debugging · Testing · Data structures · System design fundamentals
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DSA -->
+
+<section id="dsa" class="section section-alt">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Data Structures & Algorithms
+        </h2>
+
+        <p class="section-lead">
+            Regular problem-solving practice focused on understanding
+            constraints, selecting appropriate algorithms and analysing time
+            and space complexity.
+        </p>
+
+        <div class="dsa-grid">
+
+            <div class="dsa-card">
+                <div class="dsa-value">
+                    350+
+                </div>
+                <div class="dsa-label">
+                    Problems solved
+                </div>
+            </div>
+
+            <div class="dsa-card">
+                <div class="dsa-value">
+                    Java
+                </div>
+                <div class="dsa-label">
+                    Primary language
+                </div>
+            </div>
+
+            <div class="dsa-card">
+                <div class="dsa-value">
+                    C++
+                </div>
+                <div class="dsa-label">
+                    Additional language
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tags">
+
+            <span class="tag">Arrays</span>
+            <span class="tag">Strings</span>
+            <span class="tag">Hashing</span>
+            <span class="tag">Linked Lists</span>
+            <span class="tag">Stacks</span>
+            <span class="tag">Queues</span>
+            <span class="tag">Trees</span>
+            <span class="tag">Graphs</span>
+            <span class="tag">Binary Search</span>
+            <span class="tag">Recursion</span>
+            <span class="tag">Dynamic Programming</span>
+            <span class="tag">Greedy</span>
+
+        </div>
+
+        <p style="margin-top:1.2rem;color:var(--muted);font-size:.84rem;">
+            Core focus: time complexity, space complexity, pattern recognition,
+            problem decomposition and algorithm selection.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Education -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Education & Current Development
+        </h2>
+
+        <div class="experience-card">
+
+            <h3>
+                Bachelor of Technology — Computer Science
+            </h3>
+
+            <div class="company">
+                2023 – 2026
+            </div>
+
+            <p style="margin-top:.6rem;">
+                Academic foundation across data structures and algorithms,
+                object-oriented programming, database management systems,
+                computer networks, operating systems, software engineering
+                and web development.
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <h3>
+                HackerRank — Python Basic
+            </h3>
+
+            <p>
+                Certification covering Python fundamentals and programming concepts.
+            </p>
+
+            <p style="margin-top:.5rem;">
+                <a
+                    href="https://www.hackerrank.com/certificates/iframe/0d9daffb3df0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                        color:var(--primary);
+                        text-decoration:none;
+                        font-weight:600;
+                        font-size:.82rem;
+                    "
+                >
+                    View Certificate →
+                </a>
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <h3>
+                Current Technical Direction
+            </h3>
+
+            <div class="tags" style="margin-top:.8rem;">
+
+                <span class="tag">Spring Boot</span>
+                <span class="tag">System Design</span>
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">Microservices</span>
+                <span class="tag">Redis</span>
+                <span class="tag">Database Optimisation</span>
+                <span class="tag">Cloud Infrastructure</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Links -->
+
+<section id="links" class="section section-alt">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Professional Links
+        </h2>
+
+        <div class="links">
+
+            <a
+                href="https://github.com/choubey-abhishek"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-card"
+            >
+                <div>
+                    <strong>GitHub</strong>
+                    <span>Source code and engineering projects</span>
+                </div>
+
+                <span>→</span>
+            </a>
+
+            <a
+                href="https://linkedin.com/in/abhishek-choubey"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-card"
+            >
+                <div>
+                    <strong>LinkedIn</strong>
+                    <span>Professional profile</span>
+                </div>
+
+                <span>→</span>
+            </a>
+
+            <a
+                href="https://leetcode.com/u/choubey-abhishek"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-card"
+            >
+                <div>
+                    <strong>LeetCode</strong>
+                    <span>DSA practice</span>
+                </div>
+
+                <span>→</span>
+            </a>
+
+            <a
+                href="mailto:abhishekchoubey312@gmail.com"
+                class="link-card"
+            >
+                <div>
+                    <strong>Email</strong>
+                    <span>abhishekchoubey312@gmail.com</span>
+                </div>
+
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <a href="index.html">
+                ← Back to Main Portfolio
+            </a>
+
+            <span>
+                © 2026 Abhishek Choubey
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
