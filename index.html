@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Abhishek Choubey – Backend & Full-Stack Software Engineer</title>
-    <meta name="description" content="Portfolio of Abhishek Choubey — Backend & Full-Stack Developer specializing in scalable systems, Java, Node.js, and MongoDB.">
+
+    <meta
+        name="description"
+        content="Abhishek Choubey is a Backend & Full-Stack Software Engineer focused on Java, Node.js, Python, APIs, backend systems and full-stack applications."
+    >
+
     <meta name="author" content="Abhishek Choubey">
-    <meta property="og:title" content="Abhishek Choubey – Software Engineer">
-    <meta property="og:description" content="Backend & Full-Stack Developer specializing in scalable systems.">
+
+    <meta property="og:title" content="Abhishek Choubey – Backend & Full-Stack Software Engineer">
+    <meta
+        property="og:description"
+        content="Backend-focused software engineer building APIs, backend services and full-stack applications."
+    >
     <meta property="og:type" content="website">
+
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abhishek Choubey – Backend & Full-Stack Software Engineer">
+    <meta
+        name="twitter:description"
+        content="Backend-focused software engineer building APIs, backend services and full-stack applications."
+    >
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
     <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -35,7 +62,11 @@
             --gradient-accent: linear-gradient(90deg, #2563eb, #60a5fa);
             --radius: 0.75rem;
         }
-        html { scroll-behavior: smooth; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
@@ -43,20 +74,41 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
         /* ── Progress Bar ── */
+
         #progress-bar {
-            position: fixed; top: 0; left: 0; height: 2px;
-            background: var(--primary); width: 0%; z-index: 9999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: var(--primary);
+            width: 0%;
+            z-index: 9999;
             transition: width 0.1s;
         }
+
         /* ── Navbar ── */
+
         header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
             transition: all 0.3s;
             background: transparent;
         }
+
         header.scrolled {
             background: rgba(255,255,255,0.8);
             backdrop-filter: blur(16px);
@@ -64,707 +116,1873 @@
             box-shadow: var(--shadow-card);
             border-bottom: 1px solid var(--border);
         }
-        nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
-        .logo { font-family: 'Poppins', sans-serif; font-size: 1.25rem; font-weight: 800; text-decoration: none; }
-        .logo-primary { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .logo-secondary { color: var(--text); }
-        .nav-links { display: none; list-style: none; gap: 2rem; }
-        .nav-links a { text-decoration: none; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
-        .btn-outline {
-            display: none; padding: 0.5rem 1.25rem; border-radius: 50px;
-            border: 2px solid var(--primary); color: var(--primary); font-weight: 600;
-            font-size: 0.875rem; text-decoration: none; transition: all 0.2s;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
         }
-        .btn-outline:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
-        .btn-solid {
-            display: none; padding: 0.5rem 1.25rem; border-radius: 50px;
-            background: var(--primary); color: #fff; font-weight: 600;
-            font-size: 0.875rem; text-decoration: none; box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .logo-primary {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-secondary {
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-outline {
+            display: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
             transition: all 0.2s;
         }
-        .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.4); }
-        .hamburger { font-size: 1.5rem; cursor: pointer; background: none; border: none; color: var(--text); padding: 0.5rem; }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-solid {
+            display: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+            transition: all 0.2s;
+        }
+
+        .btn-solid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+        }
+
+        .hamburger {
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text);
+            padding: 0.5rem;
+        }
+
         .mobile-menu {
-            display: none; flex-direction: column; gap: 0.75rem;
-            padding: 1rem; background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(16px); border-bottom: 1px solid var(--border);
+            display: none;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
         }
-        .mobile-menu.active { display: flex; }
-        .mobile-menu a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 0.5rem 0; }
-        .mobile-menu a:hover { color: var(--primary); }
-        .mobile-actions { display: flex; gap: 0.75rem; padding-top: 0.5rem; }
-        .mobile-actions a {
-            padding: 0.5rem 1.25rem; border-radius: 50px; font-weight: 600;
-            font-size: 0.875rem; text-decoration: none; text-align: center;
+
+        .mobile-menu.active {
+            display: flex;
         }
+
+        .mobile-menu a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+
         @media (min-width: 768px) {
-            .nav-links { display: flex; }
-            .btn-outline, .btn-solid { display: inline-flex; }
-            .hamburger { display: none; }
+            .nav-links {
+                display: flex;
+            }
+
+            .btn-outline,
+            .btn-solid {
+                display: inline-flex;
+            }
+
+            .hamburger {
+                display: none;
+            }
         }
-        /* ── Hero ── */
+
+        /* ── HERO: ORIGINAL ANIMATION/DESIGN PRESERVED ── */
+
         #hero {
-            position: relative; min-height: 100vh; display: flex; align-items: center;
-            justify-content: center; text-align: center; overflow: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
             background: var(--gradient-hero);
         }
-        .wave { position: absolute; inset: 0; }
+
+        .wave {
+            position: absolute;
+            inset: 0;
+        }
+
         .wave span {
-            position: absolute; width: 300vw; height: 300vw; top: 0; left: 50%;
+            position: absolute;
+            width: 300vw;
+            height: 300vw;
+            top: 0;
+            left: 50%;
             transform: translate(-50%, -60%);
         }
-        .wave span:nth-child(1) { border-radius: 45%; background: rgba(20,20,20,0.9); animation: spin 12s linear infinite; }
-        .wave span:nth-child(2) { border-radius: 40%; background: rgba(20,20,20,0.5); animation: spin 20s linear infinite reverse; }
-        .wave span:nth-child(3) { border-radius: 42%; background: rgba(20,20,20,0.3); animation: spin 30s linear infinite; }
-        @keyframes spin { 0% { transform: translate(-50%,-60%) rotate(0deg); } 100% { transform: translate(-50%,-60%) rotate(360deg); } }
-        @media (min-width: 768px) {
-            .wave span { width: 200vh; height: 200vh; }
+
+        .wave span:nth-child(1) {
+            border-radius: 45%;
+            background: rgba(20,20,20,0.9);
+            animation: spin 12s linear infinite;
         }
-        .hero-content { position: relative; z-index: 2; color: #fff; max-width: 900px; padding: 0 1rem; }
-        .hero-subtitle { font-size: 0.875rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; opacity: 0.8; }
-        .hero-title { font-family: 'Poppins', sans-serif; font-size: 2.5rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; }
-        .hero-title span { opacity: 0.9; }
-        .hero-desc { font-size: 1rem; max-width: 640px; margin: 0 auto 2.5rem; opacity: 0.9; }
-        .hero-buttons { display: flex; flex-direction: column; gap: 1rem; justify-content: center; margin-bottom: 3rem; }
+
+        .wave span:nth-child(2) {
+            border-radius: 40%;
+            background: rgba(20,20,20,0.5);
+            animation: spin 20s linear infinite reverse;
+        }
+
+        .wave span:nth-child(3) {
+            border-radius: 42%;
+            background: rgba(20,20,20,0.3);
+            animation: spin 30s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translate(-50%,-60%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%,-60%) rotate(360deg);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .wave span {
+                width: 200vh;
+                height: 200vh;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 900px;
+            padding: 0 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            opacity: 0.9;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
         .hero-btn {
-            padding: 0.875rem 2rem; border-radius: 50px; font-weight: 600;
-            text-decoration: none; color: #fff; border: 2px solid rgba(255,255,255,0.3);
-            background: rgba(255,255,255,0.15); transition: all 0.2s; text-align: center;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15);
+            transition: all 0.2s;
+            text-align: center;
         }
-        .hero-btn:hover { background: #fff; color: var(--primary); transform: translateY(-3px); }
-        .stats { display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+
+        .hero-btn:hover {
+            background: #fff;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+        }
+
         .stat {
-            background: rgba(255,255,255,0.15); padding: 1rem 1.5rem; border-radius: 1rem;
-            border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);
+            background: rgba(255,255,255,0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
         }
-        .stat-value { display: block; font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 0.25rem; }
-        .stat-label { font-size: 0.875rem; font-weight: 500; opacity: 0.9; }
-        .scroll-arrow { display: inline-block; margin-top: 2rem; color: rgba(255,255,255,0.6); animation: bounce 2s infinite; font-size: 1.5rem; text-decoration: none; }
-        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+        .stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .scroll-arrow {
+            display: inline-block;
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.6);
+            animation: bounce 2s infinite;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        @keyframes bounce {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
         @media (min-width: 768px) {
-            .hero-title { font-size: 3.75rem; }
-            .hero-desc { font-size: 1.125rem; }
-            .hero-buttons { flex-direction: row; }
-            .stats { flex-direction: row; gap: 2rem; }
-            .stat-value { font-size: 2.5rem; }
+            .hero-title {
+                font-size: 3.75rem;
+            }
+
+            .hero-desc {
+                font-size: 1.125rem;
+            }
+
+            .hero-buttons {
+                flex-direction: row;
+            }
+
+            .stats {
+                flex-direction: row;
+                gap: 2rem;
+            }
+
+            .stat-value {
+                font-size: 2.5rem;
+            }
         }
-            .profiles-section {
-                padding: 20px 0 10px;
-                text-align: center;
+
+        /* ── Social Links ── */
+
+        .profiles-section {
+            padding: 20px 0 10px;
+            text-align: center;
+        }
+
+        .profiles-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .profile-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #111;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .profile-icon:hover {
+            transform: translateY(-5px) scale(1.08);
+            background: #0077ff;
+        }
+
+        /* ── General Sections ── */
+
+        .section {
+            padding: 4.5rem 0;
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-lead {
+            max-width: 720px;
+            margin: -1rem auto 2.5rem;
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 5.5rem 0;
             }
-            
-            .profiles-wrapper {
-                display: flex;
-                justify-content: center;
-                gap: 28px;
+
+            .section-title {
+                font-size: 2.25rem;
             }
-            
-            .profile-icon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 52px;
-                height: 52px;
-                border-radius: 50%;
-                background: #111;
-                color: #fff;
-                transition: all 0.3s ease;
-            }
-            
-            .profile-icon:hover {
-                transform: translateY(-5px) scale(1.08);
-                background: #0077ff;
-            }
-        /* ── Sections ── */
-        .section { padding: 4rem 0; }
-        .section-alt { background: var(--bg-secondary); }
-        .section-title { font-family: 'Poppins', sans-serif; font-size: 1.875rem; font-weight: 700; text-align: center; margin-bottom: 3rem; }
-        @media (min-width: 768px) { .section { padding: 6rem 0; } .section-title { font-size: 2.25rem; } }
+        }
+
         /* ── About ── */
-        .about-grid { display: grid; gap: 2.5rem; }
-        .about-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-        .about-list li { display: flex; gap: 0.75rem; color: var(--text-muted); line-height: 1.7; }
-        .about-list li strong { color: var(--text); }
-        .about-arrow { color: var(--primary); font-weight: 700; margin-top: 0.125rem; flex-shrink: 0; }
+
+        .about-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .about-copy p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .about-list li {
+            display: flex;
+            gap: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .about-arrow {
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .highlight-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
         .highlight-card {
-            display: flex; align-items: center; gap: 1rem; padding: 1rem;
-            background: var(--bg); border-radius: 0.75rem; box-shadow: var(--shadow-card);
+            background: var(--bg);
+            border-radius: 0.8rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+            padding: 1rem;
         }
-        .highlight-icon { padding: 0.75rem; background: var(--primary-bg); border-radius: 0.5rem; display: flex; }
-        .highlight-icon svg { width: 22px; height: 22px; color: var(--primary); }
-        .highlight-title { font-size: 0.875rem; font-weight: 600; }
-        .highlight-desc { font-size: 0.875rem; color: var(--text-muted); }
-        @media (min-width: 768px) { .about-grid { grid-template-columns: 3fr 2fr; } }
-        /* ── Skills ── */
-        .skills-grid { display: grid; gap: 1.5rem; }
-        .skill-card {
-            background: var(--card-bg); padding: 1.5rem; border-radius: 1rem;
-            border: 1px solid var(--border); box-shadow: var(--shadow-card);
-            transition: all 0.2s;
+
+        .highlight-title {
+            font-size: 0.86rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
         }
-        .skill-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-        .skill-card h3 {
-            font-family: 'Poppins', sans-serif; font-size: 1.125rem; font-weight: 700;
-            margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid rgba(37,99,235,0.2);
+
+        .highlight-desc {
+            color: var(--text-muted);
+            font-size: 0.82rem;
         }
-        .skill-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .skill-card li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-muted); }
-        .skill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
-        @media (min-width: 640px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .skills-grid { grid-template-columns: repeat(4, 1fr); } }
-        /* ── Projects ── */
-        .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-bottom: 2.5rem; }
-        .filter-btn {
-            padding: 0.625rem 1.25rem; border-radius: 50px; border: none;
-            background: var(--card-bg); color: var(--text-muted); font-weight: 600;
-            font-size: 0.875rem; cursor: pointer; transition: all 0.2s;
-            box-shadow: var(--shadow-card); border: 1px solid var(--border);
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 3fr 2fr;
+            }
         }
-        .filter-btn:hover { transform: translateY(-2px); }
-        .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-        .projects-grid { display: grid; gap: 1.5rem; }
-        .project-card {
-            background: var(--card-bg); border-radius: 1rem; border: 1px solid var(--border);
-            box-shadow: var(--shadow-card); overflow: hidden; display: flex; flex-direction: column;
-            transition: all 0.2s;
-        }
-        .project-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-        .project-emoji { height: 8rem; background: var(--primary-bg); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-        .project-body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
-        .project-body h3 { font-family: 'Poppins', sans-serif; font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .project-body p { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem; flex: 1; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-        .tech-tag {
-            background: var(--primary-bg); color: var(--primary); padding: 0.25rem 0.75rem;
-            border-radius: 50px; font-size: 0.75rem; font-weight: 500;
-        }
-        .project-links { display: flex; gap: 0.75rem; }
-        .project-links a {
-            font-size: 0.875rem; font-weight: 500; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 0.375rem;
-        }
-        .link-github { color: var(--primary); }
-        .link-live { color: var(--success); }
-        .project-links a:hover { text-decoration: underline; }
-        @media (min-width: 640px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+
         /* ── Experience ── */
-        .exp-card {
-            max-width: 48rem; margin: 0 auto; background: var(--card-bg); border-radius: 1rem;
-            border: 1px solid var(--border); box-shadow: var(--shadow-card); padding: 1.5rem;
+
+        .experience-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+            padding: 1.5rem;
         }
-        .exp-header { display: flex; gap: 1rem; align-items: flex-start; }
-        .exp-icon { padding: 0.75rem; background: var(--primary-bg); border-radius: 0.75rem; flex-shrink: 0; display: flex; }
-        .exp-icon svg { width: 24px; height: 24px; color: var(--primary); }
-        .exp-title { font-family: 'Poppins', sans-serif; font-size: 1.25rem; font-weight: 700; }
-        .exp-company { font-size: 0.875rem; color: var(--primary); font-weight: 600; margin-top: 0.25rem; }
-        .exp-date { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 1rem; }
-        .exp-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .exp-list li { display: flex; gap: 0.5rem; font-size: 0.875rem; color: var(--text-muted); }
-        .exp-bullet { color: var(--primary); flex-shrink: 0; }
-        .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-        @media (min-width: 768px) { .exp-card { padding: 2rem; } }
-        /* ── Achievements ── */
-        .achievements-grid { display: grid; gap: 1.5rem; }
-        .achievement-card {
-            background: var(--card-bg); border-radius: 1rem; border: 1px solid var(--border);
-            box-shadow: var(--shadow-card); padding: 1.5rem; text-align: center;
+
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-company {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .experience-date {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        .experience-summary {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .experience-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.62rem;
+        }
+
+        .experience-list li {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.87rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .experience-list li span {
+            color: var(--primary);
+        }
+
+        .stack-line {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .stack-line strong {
+            color: var(--text);
+        }
+
+        @media (min-width: 768px) {
+            .experience-card {
+                padding: 2rem;
+            }
+        }
+
+        /* ── Projects ── */
+
+        .projects-grid {
+            display: grid;
+            gap: 1.4rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+            padding: 1.4rem;
             transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
         }
-        .achievement-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
-        .ach-icon { display: inline-flex; padding: 0.75rem; background: var(--primary-bg); border-radius: 0.75rem; margin-bottom: 1rem; }
-        .ach-icon svg { width: 28px; height: 28px; color: var(--primary); }
-        .ach-value { font-size: 1.875rem; font-weight: 900; color: var(--primary); margin-bottom: 0.5rem; }
-        .ach-label { font-size: 0.875rem; color: var(--text-muted); }
-        @media (min-width: 640px) { .achievements-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .achievements-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        .project-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .project-meta {
+            font-size: 0.72rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            font-weight: 700;
+            margin-bottom: 0.45rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.12rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .tech-line-project {
+            margin-top: auto;
+            padding-top: 0.5rem;
+            color: var(--primary);
+            font-size: 0.77rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .project-links a {
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .link-github {
+            color: var(--primary);
+        }
+
+        .link-live {
+            color: var(--success);
+        }
+
+        @media (min-width: 640px) {
+            .projects-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        /* ── Skills ── */
+
+        .skills-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            line-height: 1.7;
+        }
+
+        @media (min-width: 640px) {
+            .skills-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: repeat(4,1fr);
+            }
+        }
+
+        /* ── Proof ── */
+
+        .proof-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .proof-card {
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.35rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .proof-value {
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.25rem;
+        }
+
+        .proof-label {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        @media (min-width: 640px) {
+            .proof-grid {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+
+        /* ── Education / Additional ── */
+
+        .simple-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .simple-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.35rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .simple-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .simple-card p {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+        }
+
+        @media (min-width: 640px) {
+            .simple-grid {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+
         /* ── Contact ── */
-        .contact-grid { display: grid; gap: 1rem; max-width: 40rem; margin: 0 auto; }
-        .contact-card {
-            display: flex; align-items: center; gap: 0.75rem; padding: 1rem;
-            background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.75rem;
-            box-shadow: var(--shadow-card); text-decoration: none; color: inherit;
+
+        .contact-box {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 1.75rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
             transition: all 0.2s;
         }
-        .contact-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-        .contact-icon { padding: 0.625rem; background: var(--primary-bg); border-radius: 0.5rem; display: flex; }
-        .contact-icon svg { width: 18px; height: 18px; color: var(--primary); }
-        .contact-label { font-size: 0.75rem; color: var(--text-muted); }
-        .contact-text { font-size: 0.875rem; font-weight: 500; }
-        .contact-desc { text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; }
-        @media (min-width: 640px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .contact-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
         /* ── Footer ── */
+
         footer {
-            position: relative; background: var(--gradient-hero); color: #fff;
-            padding: 3rem 0 2rem; margin-top: 4rem;
+            position: relative;
+            background: var(--gradient-hero);
+            color: #fff;
+            padding: 3rem 0 2rem;
+            margin-top: 2rem;
         }
+
         footer::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
-            background: linear-gradient(to right, #dc2626, #eab308, #16a34a, #2563eb);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(
+                to right,
+                #dc2626,
+                #eab308,
+                #16a34a,
+                #2563eb
+            );
         }
-        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
-        .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
-        .footer-nav a { color: #fff; text-decoration: none; font-size: 0.875rem; opacity: 0.9; transition: opacity 0.2s; }
-        .footer-nav a:hover { opacity: 1; }
-        .footer-social { display: flex; gap: 1rem; }
-        .footer-social a {
-            width: 2.5rem; height: 2.5rem; border-radius: 50%;
-            background: rgba(255,255,255,0.2); display: flex; align-items: center;
-            justify-content: center; font-size: 1.125rem; color: #fff;
-            text-decoration: none; transition: all 0.2s;
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
         }
-        .footer-social a:hover { background: #fff; color: var(--primary); transform: translateY(-3px); }
-        .copyright { font-size: 0.875rem; opacity: 0.7; }
+
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.3rem;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.82rem;
+            opacity: 0.9;
+        }
+
+        .copyright {
+            font-size: 0.78rem;
+            opacity: 0.7;
+        }
+
         /* ── Animations ── */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        @media (prefers-reduced-motion: reduce) { .fade-in { transition: none; opacity: 1; transform: none; } }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .wave span {
+                animation: none !important;
+            }
+        }
     </style>
 </head>
+
 <body>
-<!-- Progress Bar -->
+
 <div id="progress-bar"></div>
+
 <!-- Navbar -->
+
 <header id="navbar">
+
     <div class="container">
+
         <nav>
+
             <a href="#" class="logo">
-                <span class="logo-primary">Abhishek</span> <span class="logo-secondary">Choubey</span>
+                <span class="logo-primary">Abhishek</span>
+                <span class="logo-secondary"> Choubey</span>
             </a>
+
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="engineering.html">Engineering</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
             <div class="nav-actions">
-                <a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="btn-outline">GitHub</a>
-                <a href="#contact" class="btn-solid">Resume</a>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+
+                <a
+                    href="https://github.com/choubey-abhishek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="#contact"
+                    class="btn-solid"
+                >
+                    Contact
+                </a>
+
+                <button
+                    class="hamburger"
+                    id="hamburger"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
             </div>
+
         </nav>
+
     </div>
+
     <div class="mobile-menu" id="mobile-menu">
         <a href="#about" onclick="closeMobileMenu()">About</a>
-        <a href="#skills" onclick="closeMobileMenu()">Skills</a>
-        <a href="#projects" onclick="closeMobileMenu()">Projects</a>
         <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+        <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+        <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+        <a href="engineering.html">Engineering Details</a>
         <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-        <div class="mobile-actions">
-            <a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" style="border: 2px solid var(--primary); color: var(--primary);">GitHub</a>
-            <a href="#contact" style="background: var(--primary); color: #fff;">Resume</a>
-        </div>
     </div>
+
 </header>
-<!-- Hero -->
+
+<!-- HERO -->
+
 <section id="hero">
+
     <div class="wave">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+
     <div class="hero-content">
-        <p class="hero-subtitle">Software Engineer</p>
-        <h1 class="hero-title">Backend & Full-Stack<br><span>Developer</span></h1>
-        <p class="hero-desc">I’m Abhishek Choubey — a Computer Science graduate (Class of 2026) focused on building scalable backend systems, APIs, and performance-driven applications. I specialize in turning complex requirements into clean, production-ready code using Java, Node.js, and modern web technologies.</p>
+
+        <p class="hero-subtitle">
+            Backend & Full-Stack Software Engineer
+        </p>
+
+        <h1 class="hero-title">
+            I build backend systems,<br>
+            <span>APIs and full-stack applications.</span>
+        </h1>
+
+        <p class="hero-desc">
+            I’m Abhishek Choubey, a Computer Science graduate focused on
+            backend engineering and software development. I work primarily
+            with Java, Node.js and Python across production applications,
+            API integrations, automation and independent engineering projects.
+        </p>
+
         <div class="hero-buttons">
-            <a href="#projects" class="hero-btn">View Projects</a>
-            <a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="hero-btn">GitHub Profile</a>
+
+            <a href="#projects" class="hero-btn">
+                View Projects
+            </a>
+
+            <a
+                href="https://github.com/choubey-abhishek"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hero-btn"
+            >
+                GitHub
+            </a>
+
+            <a href="engineering.html" class="hero-btn">
+                Engineering Details
+            </a>
+
         </div>
+
         <div class="stats">
-            <div class="stat"><span class="stat-value">350+</span><span class="stat-label">DSA Problems Solved</span></div>
-            <div class="stat"><span class="stat-value">5+</span><span class="stat-label">Engineering Projects</span></div>
-            <div class="stat"><span class="stat-value">Backend</span><span class="stat-label">Focused Developer</span></div>
+
+            <div class="stat">
+                <span class="stat-value">350+</span>
+                <span class="stat-label">
+                    DSA Problems Solved
+                </span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-value">6+</span>
+                <span class="stat-label">
+                    Engineering Projects
+                </span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-value">2025–Present</span>
+                <span class="stat-label">
+                    Professional Development
+                </span>
+            </div>
+
         </div>
-        <a href="#about" class="scroll-arrow">↓</a>
+
+        <a
+            href="#about"
+            class="scroll-arrow"
+            aria-label="Scroll to About"
+        >
+            ↓
+        </a>
+
     </div>
+
 </section>
 
-    <!-- Profiles / Social Links -->
+<!-- Social -->
+
 <section class="profiles-section">
+
     <div class="container">
+
         <div class="profiles-wrapper fade-in">
 
-            <a href="https://github.com/choubey-abhishek" target="_blank" class="profile-icon" title="GitHub">
-                <!-- GitHub -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
+            <a
+                href="https://github.com/choubey-abhishek"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-icon"
+                title="GitHub"
+                aria-label="GitHub"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
                     <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.55v-2.15c-3.2.7-3.87-1.55-3.87-1.55-.53-1.36-1.3-1.72-1.3-1.72-1.07-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.05 1.8 2.75 1.28 3.42.98.1-.76.41-1.28.74-1.58-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.2-3.1-.12-.3-.52-1.5.11-3.13 0 0 .98-.31 3.2 1.2a11.1 11.1 0 0 1 5.83 0c2.22-1.51 3.2-1.2 3.2-1.2.63 1.63.23 2.83.11 3.13.75.8 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.68.42.36.8 1.1.8 2.22v3.3c0 .3.21.66.8.55 4.56-1.53 7.85-5.85 7.85-10.95C23.5 5.74 18.27.5 12 .5z"/>
                 </svg>
             </a>
 
-            <a href="https://linkedin.com/in/abhishek-choubey" target="_blank" class="profile-icon" title="LinkedIn">
-                <!-- LinkedIn -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
+            <a
+                href="https://linkedin.com/in/abhishek-choubey"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-icon"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
                     <path d="M4.98 3.5C4.98 5 3.87 6.1 2.49 6.1 1.11 6.1 0 5 0 3.5 0 2 1.11.9 2.49.9c1.38 0 2.49 1.1 2.49 2.6zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.83-2.2 3.76-2.2 4.02 0 4.76 2.65 4.76 6.1V24h-4v-7.5c0-1.8-.03-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4V24h-4V8z"/>
                 </svg>
             </a>
 
-            <a href="https://leetcode.com/u/choubey-abhishek" target="_blank" class="profile-icon" title="LeetCode">
-                <!-- LeetCode -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
+            <a
+                href="https://leetcode.com/u/choubey-abhishek"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-icon"
+                title="LeetCode"
+                aria-label="LeetCode"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    viewBox="0 0 24 24"
+                >
                     <path d="M13.5 3L6 10.5l7.5 7.5M6 10.5h12"/>
                 </svg>
             </a>
 
-            <a href="mailto:abhishekchoubey312@gmail.com" class="profile-icon" title="Email">
-                <!-- Email -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <a
+                href="mailto:abhishekchoubey312@gmail.com"
+                class="profile-icon"
+                title="Email"
+                aria-label="Email"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                >
                     <rect width="20" height="16" x="2" y="4" rx="2"/>
                     <path d="m22 7-10 6L2 7"/>
                 </svg>
             </a>
 
         </div>
+
     </div>
+
 </section>
-    
+
 <!-- About -->
+
 <section id="about" class="section section-alt">
+
     <div class="container">
-        <h2 class="section-title fade-in">About Me</h2>
+
+        <h2 class="section-title fade-in">
+            Engineering Profile
+        </h2>
+
         <div class="about-grid">
-            <div class="fade-in">
-                <ul class="about-list">
-                    <li><span class="about-arrow">▸</span><span>Computer Science graduate (Class of 2026) with a backend-first mindset and a strong foundation in system architecture.</span></li>
-                    <li><span class="about-arrow">▸</span><span>Solved 350+ DSA problems on LeetCode, bridging the gap between theoretical algorithms and practical optimization.</span></li>
-                    <li><span class="about-arrow">▸</span><span>Hands-on production experience with <strong>Java, Python, Node.js, and MongoDB</strong> — building distributed systems, RESTful APIs, and automation workflows.</span></li>
-                    <li><span class="about-arrow">▸</span><span>Deep understanding of core computer science concepts: Data Structures, Object-Oriented Programming, and database modeling.</span></li>
-                    <li><span class="about-arrow">▸</span><span>Actively seeking full-time Software Engineering roles to engineer scalable SaaS products and enterprise business platforms.</span></li>
-                </ul>
+
+            <div class="about-copy fade-in">
+
+                <p>
+                    I’m a Computer Science graduate focused on backend engineering
+                    and full-stack software development. I enjoy working on
+                    problems where application logic, data, performance and
+                    reliability need to work together.
+                </p>
+
+                <p>
+                    My professional experience includes working with existing
+                    production codebases, implementing features, integrating APIs,
+                    debugging application issues and building automation workflows.
+                </p>
+
+                <p>
+                    Alongside professional work, I build backend and full-stack
+                    projects to strengthen my understanding of APIs, databases,
+                    authentication, distributed behaviour and system design.
+                </p>
+
             </div>
-            <div class="fade-in" style="display: flex; flex-direction: column; gap: 1rem;">
+
+            <div class="highlight-stack fade-in">
+
                 <div class="highlight-card">
-                    <div class="highlight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
-                    <div><p class="highlight-title">Education</p><p class="highlight-desc">B.Tech Computer Science (2026)</p></div>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></div>
-                    <div><p class="highlight-title">Backend Focus</p><p class="highlight-desc">API Architecture & Optimization</p></div>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-                    <div><p class="highlight-title">CS Fundamentals</p><p class="highlight-desc"> Data Structures, Algorithms, DBMS</p></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Skills -->
-<section id="skills" class="section">
-    <div class="container">
-        <h2 class="section-title fade-in">Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card fade-in">
-                <h3>Languages</h3>
-                <ul>
-                    <li><span class="skill-dot"></span>Java (Primary)</li>
-                    <li><span class="skill-dot"></span>C++</li>
-                    <li><span class="skill-dot"></span>Python</li>
-                </ul>
-            </div>
-            <div class="skill-card fade-in">
-                <h3>Backend & Web</h3>
-                <ul>
-                    <li><span class="skill-dot"></span>Node.js</li>
-                    <li><span class="skill-dot"></span>Express.js</li>
-                    <li><span class="skill-dot"></span>RESTful APIs</li>
-                    <li><span class="skill-dot"></span>MongoDB</li>
-                    <li><span class="skill-dot"></span>HTML / CSS</li>
-                </ul>
-            </div>
-            <div class="skill-card fade-in">
-                <h3>Core CS</h3>
-                <ul>
-                    <li><span class="skill-dot"></span>Data Structures & Algorithms</li>
-                    <li><span class="skill-dot"></span>Object-Oriented Programming</li>
-                    <li><span class="skill-dot"></span>System Design basics</li>
-                    <li><span class="skill-dot"></span>DBMS</li>
-                    <li><span class="skill-dot"></span>Computer Networks</li>
-                </ul>
-            </div>
-            <div class="skill-card fade-in">
-                <h3>Tools & Practices</h3>
-                <ul>
-                    <li><span class="skill-dot"></span>Git & GitHub</li>
-                    <li><span class="skill-dot"></span>VS Code</li>
-                    <li><span class="skill-dot"></span>Postman</li>
-                    <li><span class="skill-dot"></span>Unit Testing</li>
-                    <li><span class="skill-dot"></span>Prompt Engineering</li>
-                    <li><span class="skill-dot"></span>Agile Fundamentals</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Projects -->
-<section id="projects" class="section section-alt">
-    <div class="container">
-        <h2 class="section-title fade-in">Featured Engineering Projects</h2>
-        <div class="filters fade-in">
-            <button class="filter-btn active" onclick="filterProjects('all')">All</button>
-            <button class="filter-btn" onclick="filterProjects('backend')">Backend</button>
-            <button class="filter-btn" onclick="filterProjects('fullstack')">Full-Stack</button>
-            <button class="filter-btn" onclick="filterProjects('javascript')">JavaScript</button>
-            <button class="filter-btn" onclick="filterProjects('frontend')">Frontend</button>
-        </div>
-        <div class="projects-grid" id="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card fade-in" data-category="backend">
-                <div class="project-emoji">🧠</div>
-                <div class="project-body">
-                    <h3>Multi-Agent AI Workflow System</h3>
-                    <p>Designed a modular architecture for AI agents to handle complex task planning, execution, and validation workflows.</p>
-                    <p>Implemented ReAct-style reasoning patterns with integrated tool-calling capabilities.</p>
-                    <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">LangGraph</span></div>
-                    <div class="project-links"><a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="link-github">⚡ GitHub</a></div>
-                </div>
-            </div>
-            <!-- Project 2 -->
-            <div class="project-card fade-in" data-category="backend">
-                <div class="project-emoji">🚦</div>
-                <div class="project-body">
-                    <h3>Distributed Rate Limiter API</h3>
-                    <p>Engineered a production-grade backend service designed to control API request volume using Redis-backed state management.</p>
-                    <p>Implemented both sliding-window and token-bucket algorithms to optimize request throughput.</p>
-                    <div class="tech-tags"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">Redis</span></div>
-                    <div class="project-links"><a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="link-github">⚡ GitHub</a></div>
-                </div>
-            </div>
-            <!-- Project 3 -->
-            <div class="project-card fade-in" data-category="fullstack">
-                <div class="project-emoji">📦</div>
-                <div class="project-body">
-                    <h3>Supply Chain Intelligence Platform</h3>
-                    <p>Built a full-stack platform focused on complex operational workflows, real-time inventory management, and supply-chain data mapping.</p>
-                    <div class="tech-tags"><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">React</span></div>
-                    <div class="project-links">
-                        <a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="link-github">⚡ GitHub</a>
-                        <a href="https://supply-chain-frontend-5p65.onrender.com/" target="_blank" class="project-btn">Live Demo</a>
+                    <div class="highlight-title">
+                        Primary Focus
+                    </div>
+                    <div class="highlight-desc">
+                        Backend systems, APIs and full-stack applications
                     </div>
                 </div>
-            </div>
-            <!-- Project 4 -->
-            <div class="project-card fade-in" data-category="fullstack">
-                <div class="project-emoji">📚</div>
-                <div class="project-body">
-                    <h3>Full-Stack Educational Platform</h3>
-                    <p>Developed a comprehensive learning management platform featuring secure JWT authentication, progress tracking logic, and course management workflows.</p>
-                    <div class="tech-tags"><span class="tech-tag">MongoDB</span><span class="tech-tag">Express</span><span class="tech-tag">React</span><span class="tech-tag">Node.js</span></div>
-                    <div class="project-links"><a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="link-github">⚡ GitHub</a></div>
-                </div>
-            </div>
-            <!-- Project 5 -->
-            <div class="project-card fade-in" data-category="backend javascript">
-                <div class="project-emoji">🔗</div>
-                <div class="project-body">
-                    <h3>Scalable URL Shortener</h3>
-                    <p>Designed highly efficient RESTful APIs for short-link generation and redirection, heavily focusing on robust error handling and database lookup speed.</p>
-                    <div class="tech-tags"><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Express</span></div>
-                    <a href="https://github.com/choubey-abhishek/Scalable-URL-Shortener" target="_blank" class="project-btn">Live Demo</a>
-                </div>
-            </div>            
-            <!-- Project 6 -->
-            <div class="project-card fade-in" data-category="frontend javascript">
-                <div class="project-emoji">📈</div>
-                <div class="project-body">
-                    <h3>InstaStrategix Business Platform</h3>
-                    <p>Engineered the digital web presence and optimized lead-generation workflows for InstaStrategix, a specialized digital marketing consultancy.</p>
-                    <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
-                    <a href="https://choubey-abhishek.github.io/Instastrategix/" target="_blank" class="project-btn">Live Demo</a>
-                </div>
-            </div>
-            <!-- Project 7 -->
-            <div class="project-card fade-in" data-category="fullstack javascript">
-                <div class="project-emoji">⌨️</div>
-                <div class="project-body">
-                    <h3>Real-Time Typing Speed Tester</h3>
-                    <p>Built a responsive web application to calculate real-time WPM and accuracy metrics. Optimized frontend rendering to reduce input-processing latency by approximately 45%.</p>
-                    <div class="tech-tags"><span class="tech-tag">JavaScript</span><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">Node.js</span></div>
-                    <div class="project-links">
-                    <a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="link-github">⚡ GitHub</a>
-                    <a href="https://choubey-abhishek.github.io/Typing-Speed-Master/" target="_blank" class="project-btn">Live Demo</a>
+
+                <div class="highlight-card">
+                    <div class="highlight-title">
+                        Core Languages
+                    </div>
+                    <div class="highlight-desc">
+                        Java · JavaScript · Python · C++
                     </div>
                 </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-title">
+                        Backend Stack
+                    </div>
+                    <div class="highlight-desc">
+                        Node.js · Express.js · FastAPI · REST APIs
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-title">
+                        Data
+                    </div>
+                    <div class="highlight-desc">
+                        MongoDB · Redis
+                    </div>
+                </div>
+
             </div>
-            </div>
+
         </div>
+
     </div>
+
 </section>
+
 <!-- Experience -->
+
 <section id="experience" class="section">
+
     <div class="container">
-        <h2 class="section-title fade-in">Professional Experience</h2>
-        <div class="exp-card fade-in">
-            <div class="exp-header">
-                <div class="exp-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-                <div>
-                    <h3 class="exp-title">Technical Automation & Web Developer</h3>
-                    <p class="exp-company">Corporality Media</p>
-                    <p class="exp-date">Feb 2025 – PRESENT</p>
-                    <ul class="exp-list">
-                        <li><span class="exp-bullet">•</span>Engineered and integrated robust backend APIs using Node.js and FastAPI to power production digital business platforms.</li>
-                        <li><span class="exp-bullet">•</span>Developed core backend tracking features and real-time analytics integrations for Brevix, a growth-intelligence application.</li>
-                        <li><span class="exp-bullet">•</span>Designed automation workflows that significantly reduced repetitive manual tasks across client-facing environments.</li>
-                        <li><span class="exp-bullet">•</span>Managed end-to-end debugging, third-party API integration, and application deployments based on strict business requirements.</li>
-                    </ul>
-                    <div class="exp-tags">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">APIs</span>
-                        <span class="tech-tag">Next.js</span>
-                    </div>
-                    </div>
+
+        <h2 class="section-title fade-in">
+            Professional Experience
+        </h2>
+
+        <div class="experience-card fade-in">
+
+            <div class="experience-header">
+
+                <h3 class="experience-title">
+                    Technical Automation & Web Developer
+                </h3>
+
+                <div class="experience-company">
+                    Corporality Media
                 </div>
+
+                <div class="experience-date">
+                    February 2025 – Present
+                </div>
+
             </div>
+
+            <p class="experience-summary">
+                Work across production web applications, backend functionality,
+                APIs, external integrations, automation and technical
+                troubleshooting.
+            </p>
+
+            <ul class="experience-list">
+
+                <li>
+                    <span>•</span>
+                    <div>
+                        Develop and maintain production web applications
+                        using Next.js and JavaScript within an existing codebase.
+                    </div>
+                </li>
+
+                <li>
+                    <span>•</span>
+                    <div>
+                        Build and integrate REST APIs and third-party services
+                        across application workflows.
+                    </div>
+                </li>
+
+                <li>
+                    <span>•</span>
+                    <div>
+                        Work with Node.js, Python, FastAPI and MongoDB for
+                        backend functionality and data workflows.
+                    </div>
+                </li>
+
+                <li>
+                    <span>•</span>
+                    <div>
+                        Develop automation workflows that connect services
+                        and reduce repetitive business processes.
+                    </div>
+                </li>
+
+                <li>
+                    <span>•</span>
+                    <div>
+                        Investigate application, API, deployment and
+                        configuration issues across development and production
+                        environments.
+                    </div>
+                </li>
+
+            </ul>
+
+            <div class="stack-line">
+                <strong>Technologies:</strong>
+                Node.js · Python · FastAPI · Next.js · JavaScript · MongoDB ·
+                REST APIs · Git · GitHub · Postman · Vercel
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- Achievements -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title fade-in">Achievements & Competitive Programming</h2>
-            <div class="achievements-grid">
-    
-                <!-- LeetCode Problems -->
-                <div class="achievement-card fade-in">
-                    <div class="ach-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 20v-6M6 20V10M18 20V4"/>
-                        </svg>
-                    </div>
-                    <p class="ach-value">350+</p>
-                    <p class="ach-label">Problems solved on LeetCode (Medium & Hard) heavily utilizing Java</p>
+<!-- Selected Projects -->
+
+<section id="projects" class="section section-alt">
+
+    <div class="container">
+
+        <h2 class="section-title fade-in">
+            Selected Engineering Projects
+        </h2>
+
+        <p class="section-lead fade-in">
+            Projects selected for the engineering problems they explore, not
+            simply the number of technologies used.
+        </p>
+
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+
+            <article class="project-card fade-in">
+
+                <div class="project-meta">
+                    Backend · Distributed State
                 </div>
 
-            <!-- HackerRank Certification -->
-            <div class="achievement-card fade-in">
-                <div class="ach-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 11l3 3L22 4"/>
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                    </svg>
+                <h3>
+                    Distributed Rate Limiter
+                </h3>
+
+                <p>
+                    Backend service for controlling API request rates using
+                    Redis as shared state.
+                </p>
+
+                <p>
+                    Implemented sliding-window and token-bucket strategies to
+                    explore request counting, burst behaviour and shared state.
+                </p>
+
+                <div class="tech-line-project">
+                    Node.js · Express.js · Redis
                 </div>
-                <p class="ach-label">
-                    HackerRank Python (Basic) Certification 
-                    <a href="https://www.hackerrank.com/certificates/iframe/0d9daffb3df0" target="_blank" rel="noopener noreferrer">
-                        <br>View Certificate
+
+                <div class="project-links">
+
+                    <a
+                        href="https://github.com/choubey-abhishek"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-github"
+                    >
+                        GitHub →
+                    </a>
+
+                    <a
+                        href="engineering.html#rate-limiter"
+                        class="link-live"
+                    >
+                        Technical Details →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Project 2 -->
+
+            <article class="project-card fade-in">
+
+                <div class="project-meta">
+                    Backend · Workflow Architecture
+                </div>
+
+                <h3>
+                    Multi-Agent Workflow System
+                </h3>
+
+                <p>
+                    Backend workflow system using specialised agents for
+                    planning, execution, tool calls and validation.
+                </p>
+
+                <p>
+                    Structured around modular responsibilities rather than
+                    one tightly coupled workflow.
+                </p>
+
+                <div class="tech-line-project">
+                    Python · FastAPI · LangGraph
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://github.com/choubey-abhishek"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-github"
+                    >
+                        GitHub →
+                    </a>
+
+                    <a
+                        href="engineering.html#multi-agent"
+                        class="link-live"
+                    >
+                        Technical Details →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Project 3 -->
+
+            <article class="project-card fade-in">
+
+                <div class="project-meta">
+                    Full-Stack · Data
+                </div>
+
+                <h3>
+                    Supply Chain Intelligence Platform
+                </h3>
+
+                <p>
+                    Full-stack application built around inventory, product
+                    data and operational workflows.
+                </p>
+
+                <p>
+                    Connected a React frontend with Node.js backend services
+                    and MongoDB persistence.
+                </p>
+
+                <div class="tech-line-project">
+                    Node.js · MongoDB · React
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://github.com/choubey-abhishek"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-github"
+                    >
+                        GitHub →
+                    </a>
+
+                    <a
+                        href="https://supply-chain-frontend-5p65.onrender.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-live"
+                    >
+                        Live Demo →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Project 4 -->
+
+            <article class="project-card fade-in">
+
+                <div class="project-meta">
+                    Full-Stack · Authentication
+                </div>
+
+                <h3>
+                    Full-Stack Educational Platform
+                </h3>
+
+                <p>
+                    Learning platform centred around users, courses and
+                    learning progress.
+                </p>
+
+                <p>
+                    Implemented JWT authentication, authorisation, course
+                    management and progress tracking.
+                </p>
+
+                <div class="tech-line-project">
+                    MongoDB · Express.js · React · Node.js · JWT
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://github.com/choubey-abhishek"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-github"
+                    >
+                        GitHub →
+                    </a>
+
+                    <a
+                        href="engineering.html#educational-platform"
+                        class="link-live"
+                    >
+                        Technical Details →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Skills -->
+
+<section id="skills" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title fade-in">
+            Core Technical Skills
+        </h2>
+
+        <p class="section-lead fade-in">
+            A focused list of technologies I have used in professional work
+            and engineering projects.
+        </p>
+
+        <div class="skills-grid">
+
+            <div class="skill-card fade-in">
+                <h3>
+                    Languages
+                </h3>
+
+                <p>
+                    Java · JavaScript · Python · C++
+                </p>
+            </div>
+
+            <div class="skill-card fade-in">
+                <h3>
+                    Backend
+                </h3>
+
+                <p>
+                    Node.js · Express.js · FastAPI · REST APIs · JWT
+                </p>
+            </div>
+
+            <div class="skill-card fade-in">
+                <h3>
+                    Data
+                </h3>
+
+                <p>
+                    MongoDB · Redis · Data modelling · CRUD · Caching concepts
+                </p>
+            </div>
+
+            <div class="skill-card fade-in">
+                <h3>
+                    Frontend & Tools
+                </h3>
+
+                <p>
+                    React · Next.js · HTML · CSS · Git · GitHub · Postman · Vercel
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Problem Solving -->
+
+<section class="section section-alt">
+
+    <div class="container">
+
+        <h2 class="section-title fade-in">
+            Problem Solving
+        </h2>
+
+        <div class="proof-grid">
+
+            <div class="proof-card fade-in">
+                <div class="proof-value">
+                    350+
+                </div>
+
+                <div class="proof-label">
+                    DSA problems solved
+                </div>
+            </div>
+
+            <div class="proof-card fade-in">
+                <div class="proof-value">
+                    Java
+                </div>
+
+                <div class="proof-label">
+                    Primary DSA language
+                </div>
+            </div>
+
+            <div class="proof-card fade-in">
+                <div class="proof-value">
+                    C++
+                </div>
+
+                <div class="proof-label">
+                    Additional problem-solving language
+                </div>
+            </div>
+
+        </div>
+
+        <div
+            style="
+                max-width:850px;
+                margin:1.5rem auto 0;
+                text-align:center;
+                color:var(--text-muted);
+                font-size:.86rem;
+            "
+        >
+            Regular practice across arrays, hashing, linked lists, trees,
+            graphs, binary search, recursion, dynamic programming and greedy
+            algorithms, with emphasis on time complexity, space complexity and
+            problem decomposition.
+        </div>
+
+        <div style="text-align:center;margin-top:1.25rem;">
+
+            <a
+                href="https://leetcode.com/u/choubey-abhishek"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+            >
+                View LeetCode
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Education -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title fade-in">
+            Education & Current Direction
+        </h2>
+
+        <div class="simple-grid">
+
+            <div class="simple-card fade-in">
+
+                <h3>
+                    Bachelor of Technology — Computer Science
+                </h3>
+
+                <p>
+                    2023 – 2026
+                </p>
+
+                <p style="margin-top:.55rem;">
+                    Foundation in data structures and algorithms,
+                    object-oriented programming, databases, computer networks,
+                    operating systems and software engineering.
+                </p>
+
+            </div>
+
+            <div class="simple-card fade-in">
+
+                <h3>
+                    HackerRank — Python Basic
+                </h3>
+
+                <p>
+                    Certification covering Python fundamentals and programming
+                    concepts.
+                </p>
+
+                <p style="margin-top:.55rem;">
+                    <a
+                        href="https://www.hackerrank.com/certificates/iframe/0d9daffb3df0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color:var(--primary);text-decoration:none;font-weight:600;"
+                    >
+                        View Certificate →
                     </a>
                 </p>
+
             </div>
-            <!-- DSA Skills -->
-            <div class="achievement-card fade-in">
-                <div class="ach-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M8 12h8M12 8v8"/>
-                    </svg>
-                </div>
-                <p class="ach-label">
-                    Advanced application of Data Structures & Algorithms (Dynamic Programming, Graph Theory, Trees)
+
+            <div class="simple-card fade-in">
+
+                <h3>
+                    Current Technical Direction
+                </h3>
+
+                <p>
+                    Going deeper into Java backend development, Spring Boot,
+                    system design, distributed systems, microservices,
+                    Redis, database optimisation and cloud infrastructure.
                 </p>
-            </div>
 
-            <!-- Consistency -->
-            <div class="achievement-card fade-in">
-                <div class="ach-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                    </svg>
-                </div>
-                <p class="ach-value">60%+</p>
-                <p class="ach-label">Average acceptance rate prioritizing optimal time & space complexity</p>
             </div>
 
         </div>
+
     </div>
+
 </section>
-    
+
 <!-- Contact -->
-<section id="contact" class="section">
+
+<section id="contact" class="section section-alt">
+
     <div class="container">
-        <h2 class="section-title fade-in">Get In Touch</h2>
-        <p class="contact-desc fade-in">Let's build software that matters. Reach out for full-time opportunities or technical collaborations.</p>
-        <div class="contact-grid">
-            <a href="mailto:abhishekchoubey312@gmail.com" class="contact-card fade-in">
-                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-                <div><p class="contact-label">Email</p><p class="contact-text">abhishekchoubey312@gmail.com</p></div>
-            </a>
-            <a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
-                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></div>
-                <div><p class="contact-label">GitHub</p><p class="contact-text">github.com/choubey-abhishek</p></div>
-            </a>
-            <a href="https://linkedin.com/in/abhishek-choubey" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
-                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></div>
-                <div><p class="contact-label">LinkedIn</p><p class="contact-text">linkedin.com/in/abhishek-choubey</p></div>
-            </a>
-            <a href="https://leetcode.com/u/choubey-abhishek" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
-                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-                <div><p class="contact-label">LeetCode</p><p class="contact-text">leetcode.com/choubey-abhishek</p></div>
-            </a>
+
+        <div class="contact-box">
+
+            <h2 class="section-title fade-in">
+                Get In Touch
+            </h2>
+
+            <p class="fade-in">
+                I’m interested in software engineering opportunities where I
+                can work on real systems, strengthen my backend engineering
+                skills and learn from experienced engineers.
+            </p>
+
+            <div class="contact-links fade-in">
+
+                <a
+                    href="mailto:abhishekchoubey312@gmail.com"
+                    class="contact-link"
+                >
+                    Email
+                </a>
+
+                <a
+                    href="https://github.com/choubey-abhishek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://linkedin.com/in/abhishek-choubey"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link"
+                >
+                    LinkedIn
+                </a>
+
+                <a
+                    href="engineering.html"
+                    class="contact-link"
+                >
+                    Engineering Details
+                </a>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
+
 <!-- Footer -->
+
 <footer>
+
     <div class="container">
+
         <div class="footer-content">
+
             <div class="footer-nav">
                 <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="engineering.html">Engineering Details</a>
                 <a href="#contact">Contact</a>
             </div>
-            <div class="footer-social">
-                <a href="mailto:abhishekchoubey312@gmail.com" aria-label="Email">✉️</a>
-                <a href="https://github.com/choubey-abhishek" target="_blank" rel="noopener noreferrer" aria-label="GitHub">🐙</a>
-                <a href="https://linkedin.com/in/abhishek-choubey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">💼</a>
-            </div>
-            <p class="copyright">© 2026 Abhishek Choubey</p>
+
+            <p class="copyright">
+                © 2026 Abhishek Choubey
+            </p>
+
         </div>
+
     </div>
+
 </footer>
+
 <script>
-    // Scroll progress bar
+    /* Scroll progress */
+
     window.addEventListener('scroll', () => {
+
         const scrollTop = document.documentElement.scrollTop;
-        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        document.getElementById('progress-bar').style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
+
+        const docHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+
+        document.getElementById('progress-bar').style.width =
+            docHeight > 0
+                ? (scrollTop / docHeight * 100) + '%'
+                : '0%';
+
     });
-    // Navbar scroll effect
+
+    /* Navbar */
+
     window.addEventListener('scroll', () => {
-        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+
+        document
+            .getElementById('navbar')
+            .classList.toggle(
+                'scrolled',
+                window.scrollY > 20
+            );
+
     });
-    // Hamburger menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.toggle('active');
+
+    /* Mobile Menu */
+
+    const hamburger =
+        document.getElementById('hamburger');
+
+    const mobileMenu =
+        document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+
+        const isOpen =
+            mobileMenu.classList.toggle('active');
+
+        hamburger.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+        );
+
     });
+
     function closeMobileMenu() {
-        document.getElementById('mobile-menu').classList.remove('active');
+
+        mobileMenu.classList.remove('active');
+
+        hamburger.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
     }
-    // Project filter
-    function filterProjects(category) {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-        document.querySelectorAll('.project-card').forEach(card => {
-            if (category === 'all' || card.dataset.category.includes(category)) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
+
+    /* Fade-in */
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('visible');
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.1
             }
-        });
-    }
-    // Fade-in on scroll (Intersection Observer)
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        );
+
+    document
+        .querySelectorAll('.fade-in')
+        .forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
