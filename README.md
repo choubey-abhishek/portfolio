@@ -2,7 +2,7 @@
 
 A modern, responsive, and performance-optimized personal portfolio website showcasing my skills, projects, and achievements as a Software Engineer with a focus on backend and full-stack development.
 
-Live Demo: (Add your deployed link here)  
+Live Demo:
 GitHub Profile:choubey-abhishek.github.io/portfolio
 
 ---
